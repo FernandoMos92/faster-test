@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Image from '../../node_modules/next/image'
 import Logo from '../../public/images/fasters.png'
+import generateDate from '../utils/generateDate'
 import { mainIcons, myAccontIcons, systemIcons } from '../utils/icons'
 
 const Aside = styled.aside`
@@ -128,7 +129,8 @@ const Main = styled.main`
   width: 84.1%;
 `
 
-function Home () {
+function Home() {
+  console.log(generateDate())
   return (
     <>
       <Sheader>
