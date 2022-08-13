@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Aside = styled.aside`
+const Saside = styled.aside`
   background-color: #FFFFFF;
   height: 100vh;
   width: 268px;
@@ -104,4 +104,4 @@ const Aside = styled.aside`
   }
 `
 
-export default Aside
+export default Saside
