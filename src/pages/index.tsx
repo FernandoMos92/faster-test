@@ -129,12 +129,17 @@ const Main = styled.main`
   width: 84.1%;
 `
 
-function Home() {
+function Home () {
   console.log(generateDate())
   return (
     <>
       <Sheader>
-        header
+        <section className=''>
+          date
+        </section>
+        <section className=''>
+          search
+        </section>
       </Sheader>
       <Aside>
         <div>

@@ -1,4 +1,6 @@
-function getMonth (input) {
+import { DateSchema } from '../schema/dateSchema'
+
+function getMonth (input: number): string {
   const allMonth = {
     1: 'Janeiro',
     2: 'Fevereiro',
@@ -17,7 +19,7 @@ function getMonth (input) {
   return allMonth[input]
 }
 
-function getDay (input) {
+function getDay (input: number): string {
   const allDays = {
     0: 'Domingo',
     1: 'Segunda-Feira',
@@ -31,7 +33,7 @@ function getDay (input) {
   return allDays[input]
 }
 
-function generateDate () {
+function generateDate ():DateSchema {
   const month = new Date().getMonth() + 1
   const date = new Date().getDate()
   const day = new Date().getDay()
@@ -41,7 +43,7 @@ function generateDate () {
 
   const result = {
     nameMonth: getMonth(month),
-    dayWeek: date,
+    dayMonth: date,
     abbDate: `${getDay(day)} - ${date} de ${sliceNameMonth} - ${year}`
   }
 
