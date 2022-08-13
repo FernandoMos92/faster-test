@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Image from '../../node_modules/next/image'
 import Logo from '../../public/images/fasters.png'
 import generateDate from '../utils/generateDate'
 import { mainIcons, myAccontIcons, systemIcons } from '../utils/icons'
+import bellsIcon from '../../public/images/bell.svg'
+import profileUser from '../../public/images/profile.svg'
 
 const Aside = styled.aside`
   background-color: #FFFFFF;
@@ -111,13 +113,36 @@ const Aside = styled.aside`
 `
 
 const Sheader = styled.header`
-  border:  2px solid black;
+  display: flex;
   position: absolute;
+  background-color: #FFFFFF;
   left: 266px;
   top: 0;
   height: 139px;
   width: 84.1%;
   padding: 55px 32px;
+
+  .header__search {
+    .header__search-button {
+      background-color: #4CA7A8;
+      border: none;
+      border-radius: 6px;
+      color: #FFFFFF;
+      padding: 10px 24px;
+      height: 38px;
+      width: 144px;
+    }
+
+    .header__search-input {
+      padding: 16px;  
+      border: none;
+      width: 460px;
+      height: 56px;
+      margin: 0 16px;
+      background: #FAFAFA;
+      border-radius: 12px;
+    }
+  }
 `
 
 const Main = styled.main`
@@ -130,15 +155,33 @@ const Main = styled.main`
 `
 
 function Home () {
-  console.log(generateDate())
+  const [date, setDate] = useState(generateDate())
   return (
     <>
       <Sheader>
         <section className=''>
-          date
+          <h2>
+            {date.nameMonth}
+          </h2>
+          <p>
+            {date.abbDate}
+          </p>
         </section>
-        <section className=''>
-          search
+        <section className='header__search'>
+          <button className='header__search-button'>
+            + Create event
+          </button>
+          <input
+            className='header__search-input'
+            type="text"
+            placeholder='Search task, event, calendar'
+          />
+          <button>
+            <Image src={bellsIcon} />
+          </button>
+          <button>
+            <Image src={profileUser} />
+          </button>
         </section>
       </Sheader>
       <Aside>
