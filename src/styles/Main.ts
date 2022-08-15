@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 const Scalendar = styled.main`
+  display: flex;
+  flex-flow: column nowrap;
   background-color: #FFF;
   position: absolute;
   top: 138px;
@@ -10,10 +12,40 @@ const Scalendar = styled.main`
   padding: 32px 32px 0 32px;
 
   .calendar__container {
-    border: 2px solid black;
+    border: 1px solid #E8E8E8;
     margin-bottom: 32px;
+    padding: 24px;
     height: 349px;
     width: 420px;
+
+    .calendar__container-month {
+      display: flex;
+      justify-content: space-between;
+      width: 365px;
+    }
+
+    .calendar__container-nameMonth {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+
+    table {
+      thead {
+        tr{
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+          width: 360px;
+          color: #B4BAC5;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 15px;
+          line-height: 17px;
+          margin-bottom: 21.5px;
+        }
+      }
+    }
+
   }
 
   .calendar__events {

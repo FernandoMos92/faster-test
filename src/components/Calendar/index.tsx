@@ -1,35 +1,42 @@
 import React from 'react'
-import Scalendar from '../../styles/Main'
-import testMock from '../../mock/taskMock'
+import Image from '../../../node_modules/next/image'
+import arrowLeft from '../../../public/images/arrow-left.svg'
+import arrowRight from '../../../public/images/arrow-right.svg'
 
-function MyCalendar () {
+function Calendar () {
+  const daysOfTheWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  const days = []
+
+  for (let index = 1; index <= 31; index += 1) {
+    days.push(index)
+  }
+
   return (
-    <Scalendar>
-      <section className='calendar__container'>
-        Calendario aqui
+    <div className='calendar__container'>
+
+      <section className='calendar__container-month'>
+        <Image src={arrowLeft}/>
+        <p className='calendar__container-nameMonth'>Agosto</p>
+        <Image src={arrowRight}/>
       </section>
-      <section className='calendar__events'>
-        <h2 className='calendar__events-title'>Next Event</h2>
-        <ul className='calendar__events-list'>
+
+      <table>
+        <thead>
+          <tr>
+            {
+              daysOfTheWeek.map((day) => <th key={day}> { day } </th>)
+            }
+          </tr>
+        </thead>
+        <tbody>
           {
-            testMock.map((el) => (
-              <li
-                key={el.title}
-                className='calendar__events-listItem'
-              >
-                <h3>{el.title}</h3>
-                <p>{el.date}</p>
-                <p>{ el.eventHour }</p>
-              </li>
-            ))
+            
           }
-        </ul>
-     </section>
-      <section className='calendar__daily'>
-        Daily
-     </section>
-    </Scalendar>
+        </tbody>
+      </table>
+
+      </div>
   )
 }
 
-export default MyCalendar
+export default Calendar
