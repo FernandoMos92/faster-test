@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 
 const Sheader = styled.header`
+  border-bottom: 1px solid #E8E8E8;
   display: flex;
   position: absolute;
   background-color: #FFFFFF;
   left: 266px;
   top: 0;
-  height: 139px;
+  height: 137px;
   width: 85.4%;
   padding: 55px 32px;
 

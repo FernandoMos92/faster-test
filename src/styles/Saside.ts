@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
-const Saside = styled.aside`
+const Saside = styled.aside`  
+  border-right: 1px solid #E8E8E8;
   background-color: #FFFFFF;
   height: 100vh;
   position: absolute;
-  width: 268px;
+  width: 266px;
 
   div {
     align-items: center;
