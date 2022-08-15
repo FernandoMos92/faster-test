@@ -3,6 +3,7 @@ import styled from 'styled-components'
 const Saside = styled.aside`
   background-color: #FFFFFF;
   height: 100vh;
+  position: absolute;
   width: 268px;
 
   div {

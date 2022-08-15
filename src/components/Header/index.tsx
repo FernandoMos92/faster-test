@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Image from '../../../node_modules/next/image'
 import bellsIcon from '../../../public/images/bell.svg'
 import profileUser from '../../../public/images/profile.svg'
 import Sheader from '../../styles/Sheader'
 import generateDate from '../../utils/generateDate'
 
-function Header() {
-  const [date, setDate] = useState(generateDate())
+function Header () {
+  const date = generateDate()
 
   return (
    <Sheader>

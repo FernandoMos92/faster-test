@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 const Sheader = styled.header`
-  border: 2px solid gray;
   display: flex;
   position: absolute;
   background-color: #FFFFFF;
@@ -38,6 +37,11 @@ const Sheader = styled.header`
       margin: 0 16px;
       background: #FAFAFA;
       border-radius: 12px;
+      outline: none;
+
+      &::placeholder {
+        font-size: 18px;
+      }
     }
 
     .header__button-bell, .header__button-user {
