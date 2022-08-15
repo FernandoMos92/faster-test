@@ -38,7 +38,7 @@ function Aside () {
               systemIcons.map(({ icon, name }) => (
                 <li key={name}>
                   <Image src={icon} alt="icone" />
-                  <span>{ name}</span>
+                  <span style={ name === 'Sair' ? { color: '#4CA7A8' } : { color: '#0F1527' }}>{ name }</span>
                 </li>
               ))
               }

@@ -37,6 +37,11 @@ const Saside = styled.aside`
         font-weight: 400;
         font-size: calc( .25em + 1vw);
         line-height: 130%;
+        &:hover {
+          border-radius: 6px;
+          background-color: #E9F4F5;
+          color: #4CA7A8;
+        }
 
         span {
           margin-left: 16px;
@@ -66,8 +71,14 @@ const Saside = styled.aside`
         font-weight: 400;
         font-size: calc( .25em + 1vw);
         line-height: 130%;
+        &:hover {
+          border-radius: 6px;
+          background-color: #E9F4F5;
+          color: #4CA7A8;
+        }
 
         span {
+          border-radius: 6px;
           margin-left: 16px;
           font-weight: 500;
         }
@@ -85,7 +96,7 @@ const Saside = styled.aside`
         align-items: center;
         display: flex;
         list-style: none;
-         color: #0F1527;
+        color: #0F1527;
         justify-content: flex-start;
         line-height: 130%;
         width: 216px;
@@ -95,6 +106,11 @@ const Saside = styled.aside`
         font-weight: 400;
         font-size: calc( .25em + 1vw);
         line-height: 130%;
+         &:hover {
+          border-radius: 6px;
+          background-color: #E9F4F5;
+          color: #4CA7A8;
+        }
 
         span {
           margin-left: 16px;
