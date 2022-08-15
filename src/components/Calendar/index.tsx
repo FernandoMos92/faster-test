@@ -1,10 +1,20 @@
 import React from 'react'
 import Scalendar from '../../styles/Main'
 
-function Calendar () {
+function MyCalendar () {
   return (
-    <Scalendar>AQUIIII</Scalendar>
+    <Scalendar>
+      <section className='calendar__container'>
+        Calendario aqui
+     </section>
+      <section className='calendar__events'>
+        Next Event
+     </section>
+      <section className='calendar__daily'>
+        Daily
+     </section>
+    </Scalendar>
   )
 }
 
-export default Calendar
+export default MyCalendar
