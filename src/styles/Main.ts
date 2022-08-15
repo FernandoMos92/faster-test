@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Main = styled.main`
+const Scalendar = styled.main`
   border:  2px solid red;
   position: absolute;
   top: 138px;
@@ -9,4 +9,4 @@ const Main = styled.main`
   width: 84.1%;
 `
 
-export default Main
+export default Scalendar
