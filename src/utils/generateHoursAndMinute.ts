@@ -1,5 +1,5 @@
 function generateHour (variable) {
-  const amountHours = 12
+  const amountHours = 24
   for (let index = 1; index <= amountHours; index += 1) {
     variable.push(index)
   }

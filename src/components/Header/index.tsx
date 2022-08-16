@@ -10,8 +10,7 @@ function Header () {
   const date = generateDate()
 
   const MyContext = useContext(UserContext)
-  const { isOpenModal, setIsOpenModal } = MyContext
-  console.log('🚀 -> isOpenModal', isOpenModal)
+  const { setIsOpenModal } = MyContext
 
   return (
    <Sheader>
