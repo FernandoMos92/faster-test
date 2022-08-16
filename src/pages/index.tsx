@@ -1,15 +1,16 @@
 import React from 'react'
 import Header from '../components/Header/index'
 import Aside from '../components/Aside/index'
-import MyCalendar from '../components/Calendar/index'
+import Main from '../components/Main/index'
+import { UserContextProvider } from '../Context/Context'
 
 function Home () {
   return (
-    <>
+    <UserContextProvider>
       <Aside />
       <Header />
-      <MyCalendar />
-    </>
+      <Main />
+    </UserContextProvider>
   )
 }
 

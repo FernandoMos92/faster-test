@@ -1,34 +1,25 @@
-import React from 'react'
-import Scalendar from '../../styles/Main'
-import testMock from '../../mock/taskMock'
+import React, { useCallback, useState } from 'react'
+import '@natscale/react-calendar/dist/main.css'
+import { Calendar } from '@natscale/react-calendar'
 
 function MyCalendar () {
+  const [value, setValue] = useState(new Date())
+
+  const onChange = useCallback(
+    (val) => {
+      setValue(val)
+    },
+    [setValue]
+  )
   return (
-    <Scalendar>
-      <section className='calendar__container'>
-        Calendario aqui
-      </section>
-      <section className='calendar__events'>
-        <h2 className='calendar__events-title'>Next Event</h2>
-        <ul className='calendar__events-list'>
-          {
-            testMock.map((el) => (
-              <li
-                key={el.title}
-                className='calendar__events-listItem'
-              >
-                <h3>{el.title}</h3>
-                <p>{el.date}</p>
-                <p>{ el.eventHour }</p>
-              </li>
-            ))
-          }
-        </ul>
-     </section>
-      <section className='calendar__daily'>
-        Daily
-     </section>
-    </Scalendar>
+    <Calendar
+      className="calendar__container"
+      value={value}
+      onChange={onChange}
+      hideAdjacentDates
+      fontSize={18}
+      size={ 350 }
+    />
   )
 }
 
