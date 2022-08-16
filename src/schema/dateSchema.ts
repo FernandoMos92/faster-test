@@ -3,3 +3,9 @@ export interface DateSchema {
   dayMonth: number,
   abbDate: string
 }
+
+export interface MockSchema {
+  title: string;
+  date: string;
+  eventHour: string;
+}
