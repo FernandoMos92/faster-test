@@ -11,6 +11,7 @@ function Header () {
 
   const MyContext = useContext(UserContext)
   const { isOpenModal, setIsOpenModal } = MyContext
+  console.log('🚀 -> isOpenModal', isOpenModal)
 
   return (
    <Sheader>
@@ -25,7 +26,7 @@ function Header () {
         <section className='header__search'>
         <button
           className='header__addButton-event'
-          onClick={ () => setIsOpenModal(!isOpenModal)}
+          onClick={ () => setIsOpenModal(true)}
         >
             + Create event
           </button>

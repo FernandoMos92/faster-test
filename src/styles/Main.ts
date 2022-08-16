@@ -87,7 +87,7 @@ const Scalendar = styled.main`
       position: fixed;
       height: 3vh;
       width: 420px;
-      z-index: 99;
+      z-index: 95;
     }
     
     .calendar__events-list {
