@@ -9,7 +9,7 @@ const NewEvent = styled.div`
   top: 15vh;
   left: 17vw;
   padding: 15px;
-  height: 300px;
+  height: 350px;
   width: 700px;
   z-index: 98;
 
@@ -18,6 +18,9 @@ const NewEvent = styled.div`
   }
 
   .newEvent_closeModal {
+    border: none;
+    color: #4ca7a8;
+    font-size: 14px;
     position: absolute;
     top: 20px;
     right: 30px;
