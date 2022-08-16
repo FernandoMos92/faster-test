@@ -72,6 +72,15 @@ const Scalendar = styled.main`
     height: 420px;
     width: 420px;
 
+    .event__notFound {
+      font-size: 22px;
+      font-weight: 400;
+      position: absolute;
+      text-align: center;
+      margin-left: 50px;
+      top: 560px;
+    }
+
     ::-webkit-scrollbar {
       background-color: transparent;
       width: .5px;

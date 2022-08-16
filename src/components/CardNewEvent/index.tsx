@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { UserContext } from '../../Context/Context'
 import NewEvent from '../../styles/CardNewEvent'
+import clearForms from '../../utils/clearFroms'
 import {
   generateHour,
   generateMinute
@@ -93,7 +94,7 @@ function CardNewEvent () {
           <abbr title='Limpar os campos'>
             <button
               type='button'
-              onClick={ () => event.preventDefault()}
+              onClick={ clearForms }
               className='newEvent__buttons-clear'
             >
               Limpar
