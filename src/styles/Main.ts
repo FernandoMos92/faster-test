@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const Scalendar = styled.main`
+  background-image: url('../../public/images/arrow-left.svg');
   display: flex;
   flex-flow: column nowrap;
   background-color: #FFF;
@@ -15,7 +16,7 @@ const Scalendar = styled.main`
     border: 1px solid #E8E8E8;
     margin-bottom: 32px;
     padding: 24px;
-    height: 349px;
+    height: 375px;
     width: 420px;
 
     .calendar__container-month {
@@ -29,23 +30,40 @@ const Scalendar = styled.main`
       margin-bottom: 24px;
     }
 
-    table {
-      thead {
-        tr{
-          display: flex;
-          flex-flow: row nowrap;
-          justify-content: space-between;
-          width: 360px;
-          color: #B4BAC5;
-          font-style: normal;
-          font-weight: 500;
-          font-size: 15px;
-          line-height: 17px;
-          margin-bottom: 21.5px;
-        }
-      }
+     .rc_header_nav.rc_header_nav-prev > span {
+      visibility: hidden;
+    } 
+    
+    .rc_header_nav.rc_header_nav-next > span {
+      visibility: hidden;
     }
 
+    .rc_header_nav.rc_header_nav-prev {
+      position: relative;
+    }
+
+    .rc_header_nav.rc_header_nav-prev::after {
+    content: " ";
+    background-image: url('/images/arrow-left.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 10px;
+    width:10px;
+    top: .8rem;
+    left: .8rem;
+    }
+    .rc_header_nav.rc_header_nav-next::before {
+      content: " ";
+      background-image: url('/images/arrow-right.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      height: 10px;
+      width:10px;
+      top: 1rem;
+      right: 1rem;
+    }
   }
 
   .calendar__events {

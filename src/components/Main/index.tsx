@@ -1,12 +1,12 @@
 import React from 'react'
 import Scalendar from '../../styles/Main'
 import testMock from '../../mock/taskMock'
-import Calendar from '../Calendar/index'
+import MyCalendar from '../Calendar/index'
 
 function Main () {
   return (
     <Scalendar>
-      <Calendar />
+      <MyCalendar />
       <section className='calendar__events'>
         <h2 className='calendar__events-title'>Next Event</h2>
         <ul className='calendar__events-list'>

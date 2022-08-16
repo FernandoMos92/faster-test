@@ -1,42 +1,29 @@
-import React from 'react'
-import Image from '../../../node_modules/next/image'
-import arrowLeft from '../../../public/images/arrow-left.svg'
-import arrowRight from '../../../public/images/arrow-right.svg'
+import React, { useCallback, useState } from 'react'
+import '@natscale/react-calendar/dist/main.css'
+import { Calendar } from '@natscale/react-calendar'
 
-function Calendar () {
-  const daysOfTheWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-  const days = []
+function MyCalendar () {
+  const [value, setValue] = useState(new Date())
 
-  for (let index = 1; index <= 31; index += 1) {
-    days.push(index)
-  }
+  const onChange = useCallback(
+    (val) => {
+      setValue(val)
+    },
+    [setValue]
+  )
 
+  console.log(value.toString().split(' '))
   return (
-    <div className='calendar__container'>
-
-      <section className='calendar__container-month'>
-        <Image src={arrowLeft}/>
-        <p className='calendar__container-nameMonth'>Agosto</p>
-        <Image src={arrowRight}/>
-      </section>
-
-      <table>
-        <thead>
-          <tr>
-            {
-              daysOfTheWeek.map((day) => <th key={day}> { day } </th>)
-            }
-          </tr>
-        </thead>
-        <tbody>
-          {
-            
-          }
-        </tbody>
-      </table>
-
-      </div>
+    <Calendar
+      className="calendar__container"
+      value={value}
+      onChange={onChange}
+      hideAdjacentDates
+      initialView="month"
+      fontSize={18}
+      size={ 350 }
+    />
   )
 }
 
-export default Calendar
+export default MyCalendar
