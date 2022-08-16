@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Scalendar from '../../styles/Main'
 import testMock from '../../mock/taskMock'
 import MyCalendar from '../Calendar/index'
+import CardNewEvent from '../CardNewEvent/index'
 
 function Main () {
   return (
@@ -23,7 +24,10 @@ function Main () {
             ))
           }
         </ul>
-     </section>
+      </section>
+      {
+        !active && <CardNewEvent />
+      }
       <section className='calendar__daily'>
         Daily
      </section>
