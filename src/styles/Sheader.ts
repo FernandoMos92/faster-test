@@ -20,14 +20,28 @@ const Sheader = styled.header`
     align-items: center;
     position: absolute;
     right: 32px;
-    .header__search-button {
+
+    .header__addButton-event{
       background-color: #4CA7A8;
       border: none;
       border-radius: 6px;
+      font-size: 16px;
       color: #FFFFFF;
+      cursor: pointer;
       padding: 10px 24px;
       height: 38px;
-      width: 144px;
+      width: 160px;
+      transition: all .30s ease-in-out;
+
+      &:hover {
+        background-color: #FFFFFF;
+        border: 1px groove #4CA7A8;
+        color: #4CA7A8;
+      }
+
+      &:active {
+        transform: scale(.8);
+      }
     }
 
     .header__search-input {

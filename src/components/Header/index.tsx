@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Image from '../../../node_modules/next/image'
 import bellsIcon from '../../../public/images/bell.svg'
 import profileUser from '../../../public/images/profile.svg'
 import Sheader from '../../styles/Sheader'
 import generateDate from '../../utils/generateDate'
+import { UserContext } from '../../Context/Context'
 
 function Header () {
   const date = generateDate()
+
+  const MyContext = useContext(UserContext)
+  const { isOpenModal, setIsOpenModal } = MyContext
 
   return (
    <Sheader>
@@ -19,7 +23,10 @@ function Header () {
           </p>
         </section>
         <section className='header__search'>
-          <button className='header__search-button'>
+        <button
+          className='header__addButton-event'
+          onClick={ () => setIsOpenModal(!isOpenModal)}
+        >
             + Create event
           </button>
           <input

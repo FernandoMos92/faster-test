@@ -11,15 +11,12 @@ function MyCalendar () {
     },
     [setValue]
   )
-
-  console.log(value.toString().split(' '))
   return (
     <Calendar
       className="calendar__container"
       value={value}
       onChange={onChange}
       hideAdjacentDates
-      initialView="month"
       fontSize={18}
       size={ 350 }
     />
