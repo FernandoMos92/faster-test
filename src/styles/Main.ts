@@ -127,6 +127,7 @@ const Scalendar = styled.main`
   }
 
   .calendar__daily {
+    border-top: 1px solid #E8E8E8;
     border-left: 1px solid #E8E8E8;
     position: absolute;
     right: 32px;
@@ -135,7 +136,6 @@ const Scalendar = styled.main`
     padding: 40px;
     width: 1080px;
     height: 780px;
-
     ::-webkit-scrollbar {
       width: 1px;
     }
