@@ -1,31 +1,16 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { UserContext } from '../../Context/Context'
 import NewEvent from '../../styles/CardNewEvent'
 import clearForms from '../../utils/clearFroms'
-import {
-  generateHour,
-  generateMinute
-} from '../../utils/generateHoursAndMinute'
-import { inputchange } from '../../utils/inpuChange'
+import generateSchudele from '../../utils/generateSchudele'
+// import { inputchange } from '../../utils/inpuChange'
 
 function CardNewEvent () {
-  const [newEvent, setNewEvent] = useState({
-    title: '',
-    description: '',
-    hours: '',
-    minutes: '',
-    period: ''
-  })
-  const hours = []
-  const minutes = []
-  const { setIsOpenModal } = useContext(UserContext)
-
-  generateHour(hours)
-  generateMinute(minutes)
+  const { hours, minutes } = generateSchudele()
+  const { setIsOpenModal, newEvent, setNewEvent } = useContext(UserContext)
 
   return (
     <NewEvent>
-      <h1>DATA QUI</h1>
       <button
         className='newEvent_closeModal'
         onClick={ () => setIsOpenModal(false)}
@@ -34,50 +19,84 @@ function CardNewEvent () {
       </button>
       <form className='newEvent__form'>
 
-        <section className='newEvent__container-input'>
-          <input
-            onChange={inputchange(newEvent, setNewEvent)}
-            name='title'
-            value={ newEvent.title }
-            className='newEvent__form-title default_style'
-            type='text'
-            placeholder='Insira o titulo do seu novo evento'
-          />
-          <textarea
-            onChange={inputchange(newEvent, setNewEvent) }
-            name='description'
-            value={ newEvent.description }
-            className='newEvent__form-description default_style'
-            placeholder='Inisira a descrição do seu evento'></textarea>
+        <section className='newEvent__container-hour'>
+          <h3 className='newEvent__container-hour-title'>Selecione a hora do seu evento</h3>
+          <div className='data__container-hour'>
+            <label htmlFor="data__event-hour">Hora</label>
+            <select
+              className='data__event-hour'
+              name="data__event-hour"
+              id="data__event-hour"
+            >
+              {
+                hours.map((hour) => (
+                  <option
+                    key={hour}
+                    value={hour}
+                  >
+                    {hour}
+                  </option>
+                ))
+              }
+            </select>
+          </div>
+          <div className='data__container-minute'>
+            <label htmlFor="data__event-minute">Minutos</label>
+            <select
+              className='data__event-minute'
+              name="data__event-minute"
+              id="data__event-minute"
+            >
+              {
+                minutes.map((minutes) => (
+                  <option
+                    key={minutes}
+                    value={minutes}
+                  >
+                    {minutes}
+                  </option>
+                ))
+              }
+            </select>
+          </div>
         </section>
 
-        <section className='newEvent__container-time'>
-          <label htmlFor='form-hours' className='newEvent__section-hours'>
-            <select name='form-hours' id='form-hours' className='newEvent__form-hours'>
-              {hours.map(hour => (
-                <option
-                  key={hour}
-                  value={newEvent.hours}
-                >
-                  {hour}
-                </option>
-              ))}
-            </select>
-            Horas
+        <section className='newEvent__container-inputs'>
+          <label
+            className='newEvent__label-title'
+            htmlFor="newEvent__title"
+          >
+            <h3>Titulo do seu evento</h3>
           </label>
-          <label htmlFor=''>
-            <select className='newEvent__form-minutes' name='' id=''>
-              {minutes.map(minute => (
-                <option
-                  key={minute}
-                  value={ newEvent.minutes }
-                >
-                  {minute}
-                </option>
-              ))}
-            </select>
-            Minutos
+          <input
+            id='newEvent__title'
+            name='newEvent__title'
+            type="text"
+          />
+
+          <label
+            className='newEvent__label-description'
+            htmlFor="newEvent__description"
+          >
+            <h3>Descrição do seu evento</h3>
           </label>
+          <input
+            id='newEvent__description'
+            name='newEvent__description'
+            type="text"
+          />
+
+          <label
+            className='newEvent__label-location'
+            htmlFor="newEvent__location"
+          >
+            <h3>Local do seu evento</h3>
+          </label>
+          <input
+            id='newEvent__local'
+            name='newEvent__local'
+            type="text"
+          />
         </section>
 
         <section className='newEvent__container-buttons'>

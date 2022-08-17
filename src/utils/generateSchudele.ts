@@ -1,12 +1,17 @@
 const generateSchudele = () => {
   const timeAM = []
   const timePM = []
-  const fractionMinute = [30, 60]
-  const maxNumber = 12
+  const fractionMinute = []
+  const maxHour = 12
+  const maxMinute = 60
 
-  for (let index = 1; index <= maxNumber; index += 1) {
+  for (let index = 1; index <= maxHour; index += 1) {
     timeAM.push(`${index} am`)
     timePM.push(`${index} pm`)
+  }
+
+  for (let index = 0; index <= maxMinute; index += 1) {
+    fractionMinute.push(index)
   }
 
   const result = {

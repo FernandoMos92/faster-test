@@ -6,16 +6,13 @@ const NewEvent = styled.div`
   border-radius: 6px;
   color: #4ca7a8;
   position: absolute;
-  top: 15vh;
-  left: 17vw;
+  top: 11vh;
+  left: 20vw;
   padding: 15px;
-  height: 350px;
-  width: 700px;
+  height: 450px;
+  width: 500px;
   z-index: 98;
 
-  h1 {
-    margin-left: 85px;
-  }
 
   .newEvent_closeModal {
     border: none;
@@ -117,6 +114,65 @@ const NewEvent = styled.div`
       } 
     }
   }
+
+  .newEvent__container-hour {
+    height: 10vh;
+    width: 98%;
+
+    .newEvent__container-hour-title {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .data__container-hour {
+      margin-left: 25px;
+    }
+
+    .data__container-hour, .data__container-minute {
+      display: flex;
+      flex-flow: column nowrap;
+      display: inline;
+      margin-right: 15px;
+    }
+
+    label {
+      font-size: 16px;
+      color: black;
+      margin-right: 5px;
+    }
+
+    .data__event-hour, .data__event-minute {
+      border-bottom: 2px solid gray;
+      border-radius: 4px;
+      padding: 5px;
+      outline: none;
+      width: 80px;
+    } 
+  }
+
+  .newEvent__container-inputs {
+    height: 15vh;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 98%;
+  }
+
+  .newEvent__container-inputs > label > h3{
+    margin-bottom: 10px;
+    font-size: 22px;
+  }
+
+  .newEvent__container-inputs > input {
+    border: none;
+    border-bottom: 2px solid gray;
+    border-radius: 6px;
+    padding: 5px;
+    outline: none;
+    margin-bottom: 10px;
+    margin-left: 65px;
+    width: 70%;
+  }
+
 `
 
 export default NewEvent
