@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 function CardEvent () {
-  const [events, setEvents] = useState([])
+  const [events] = useState([])
   return (
     <section className='calendar__events'>
       <h3 className='calendar__events-title'>Next Event</h3>

@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import Scalendar from '../../styles/Main'
-import testMock from '../../mock/taskMock'
 import MyCalendar from '../Calendar/index'
 import { UserContext } from '../../Context/Context'
 import CardNewEvent from '../CardNewEvent/index'
 import CardEvent from '../CardEvent/index'
+import Schedule from '../Schedule/index'
 
 function Main () {
   const { isOpenModal } = useContext(UserContext)
@@ -17,7 +17,7 @@ function Main () {
         <CardEvent />
       </section>
       <section className='calendar__daily'>
-        Daily
+        <Schedule />
       </section>
       {
         isOpenModal && <CardNewEvent />

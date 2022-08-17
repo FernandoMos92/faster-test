@@ -127,12 +127,18 @@ const Scalendar = styled.main`
   }
 
   .calendar__daily {
-    border: 2px solid red;
+    border-left: 1px solid #E8E8E8;
     position: absolute;
     right: 32px;
     top: 32px;
+    overflow-y: scroll;
+    padding: 40px;
     width: 1080px;
-    height: 800px;
+    height: 780px;
+
+    ::-webkit-scrollbar {
+      width: 1px;
+    }
   }
 `
 
