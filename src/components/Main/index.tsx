@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { ReactPropTypes, useContext } from 'react'
 import Scalendar from '../../styles/Main'
 import MyCalendar from '../Calendar/index'
 import { UserContext } from '../../Context/Context'
@@ -6,7 +6,7 @@ import CardNewEvent from '../CardNewEvent/index'
 import CardEvent from '../CardEvent/index'
 import Schedule from '../Schedule/index'
 
-function Main () {
+function Main ({ temperature }:any) {
   const { isOpenModal } = useContext(UserContext)
 
   return (
@@ -20,7 +20,7 @@ function Main () {
         <Schedule />
       </section>
       {
-        isOpenModal && <CardNewEvent />
+        isOpenModal && <CardNewEvent temperature={ temperature } />
       }
     </Scalendar>
   )

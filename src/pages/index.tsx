@@ -1,20 +1,18 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { GetServerSideProps } from 'next'
 import Header from '../components/Header/index'
 import Aside from '../components/Aside/index'
 import Main from '../components/Main/index'
 import { UserContextProvider } from '../Context/Context'
 
-function Home(props) {
-  console.log('🚀 -> props', props)
-  useEffect(() => {
-    localStorage.setItem('events', JSON.stringify([]))
-  })
+function Home ({ climate: { main: { temp } } }: any) {
+  const defaultTemp: number = temp
+
   return (
     <UserContextProvider>
       <Aside />
       <Header />
-      <Main />
+      <Main temperature={defaultTemp} />
     </UserContextProvider>
   )
 }

@@ -1,3 +1,4 @@
-export const inputchange = (state, stateSet) => ({ target: { name, value } }) => {
+export const inputchange = (state, stateSet, callBack?) => ({ target: { name, value } }) => {
   stateSet({ ...state, [name]: value })
+  if (callBack) callBack()
 }

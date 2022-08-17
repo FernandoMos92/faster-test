@@ -3,6 +3,7 @@ import React, { createContext, ReactNode, useState } from 'react'
 type eventType = {
   date: string,
   hour: string,
+  minute: string,
   title: string,
   description: string,
   location: string
@@ -14,6 +15,7 @@ type UserContextTypes = {
    newEvent: {
     date: string,
     hour: string,
+    minute: string,
     title: string,
     description: string,
     location: string
@@ -21,6 +23,8 @@ type UserContextTypes = {
   setNewEvent: (newState: eventType) => void;
   value: string;
   setValue: (newState: string) => void;
+  allEvents: any;
+  setAllEvents: (newState: string) => void;
 }
 
 type UserContextProps = {
@@ -33,11 +37,13 @@ const initialValue = {
   newEvent: {
     date: '',
     hour: '',
+    minute: '',
     title: '',
     description: '',
     location: ''
   },
-  value: ''
+  value: '',
+  allEvents: []
 }
 
 export const UserContext = createContext<UserContextTypes>(initialValue)
@@ -46,6 +52,7 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
   const [isOpenModal, setIsOpenModal] = useState(initialValue.isOpenModal)
   const [newEvent, setNewEvent] = useState(initialValue.newEvent)
   const [value, setValue] = useState(new Date())
+  const [allEvents, setAllEvents] = useState(initialValue.allEvents)
 
   const scheduleContext = {
     isOpenModal,
@@ -53,7 +60,9 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
     newEvent,
     setNewEvent,
     value,
-    setValue
+    setValue,
+    allEvents,
+    setAllEvents
   }
 
   return (

@@ -4,7 +4,7 @@ const NewEvent = styled.div`
   border: 2px groove #E8E8E8;
   background-color: #f2f2f2ee;
   border-radius: 6px;
-  color: #4ca7a8;
+  color: #000;
   position: absolute;
   top: 11vh;
   left: 20vw;
@@ -12,6 +12,10 @@ const NewEvent = styled.div`
   height: 450px;
   width: 500px;
   z-index: 98;
+
+  h2 {
+    text-align: center;
+  }
 
 
   .newEvent_closeModal {

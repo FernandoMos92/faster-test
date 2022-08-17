@@ -1,16 +1,58 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { UserContext } from '../../Context/Context'
+import { BsPinMapFill } from 'react-icons/bs'
+import { FaTemperatureLow } from 'react-icons/fa'
 import NewEvent from '../../styles/CardNewEvent'
 import clearForms from '../../utils/clearFroms'
 import generateSchudele from '../../utils/generateSchudele'
-// import { inputchange } from '../../utils/inpuChange'
+import { inputchange } from '../../utils/inpuChange'
 
-function CardNewEvent () {
+function CardNewEvent ({ temperature }: any) {
+  const [temp] = useState(temperature.toFixed(1))
+  const [isDisabled, setIsDisabled] = useState(true)
+
   const { hours, minutes } = generateSchudele()
-  const { setIsOpenModal, newEvent, setNewEvent } = useContext(UserContext)
+  const { setIsOpenModal, newEvent, setNewEvent, allEvents, setAllEvents } = useContext(UserContext)
 
+  function handleButton () {
+    setIsDisabled(true)
+    const { title, date } = newEvent
+    const checked = title.length > 0 || date.length > 0
+    if (checked) {
+      setIsDisabled(false)
+    }
+  }
+
+  function clickAndSave (evt) {
+    const result = [...allEvents, newEvent]
+    setAllEvents(result)
+    const clearEvent = {
+      date: '',
+      hour: '',
+      minute: '',
+      title: '',
+      description: '',
+      location: ''
+    }
+    setNewEvent(clearEvent)
+    setIsOpenModal(false)
+  }
+
+  useEffect(() => {
+    handleButton()
+  }, [newEvent.date, newEvent.title])
   return (
     <NewEvent>
+      <h2>
+        São Paulo {' '}
+        <abbr title="Localização atual">
+          <BsPinMapFill style={{ color: '#4CA7A8' }}/>
+        </abbr>
+        {` - ${temp}º `}
+        <abbr title="Temperatura atual">
+          <FaTemperatureLow style={ temp < 20 ? { color: '#4CA7A8' } : { color: '#d12004' }} />
+        </abbr>
+      </h2>
       <button
         className='newEvent_closeModal'
         onClick={ () => setIsOpenModal(false)}
@@ -25,8 +67,9 @@ function CardNewEvent () {
             <label htmlFor="data__event-hour">Hora</label>
             <select
               className='data__event-hour'
-              name="data__event-hour"
+              name="hour"
               id="data__event-hour"
+              onChange={ inputchange(newEvent, setNewEvent)}
             >
               {
                 hours.map((hour) => (
@@ -44,8 +87,9 @@ function CardNewEvent () {
             <label htmlFor="data__event-minute">Minutos</label>
             <select
               className='data__event-minute'
-              name="data__event-minute"
+              name="minute"
               id="data__event-minute"
+              onChange={ inputchange(newEvent, setNewEvent)}
             >
               {
                 minutes.map((minutes) => (
@@ -70,8 +114,10 @@ function CardNewEvent () {
           </label>
           <input
             id='newEvent__title'
-            name='newEvent__title'
+            name='title'
             type="text"
+            value={ newEvent.title }
+            onChange={ inputchange(newEvent, setNewEvent)}
           />
 
           <label
@@ -82,8 +128,10 @@ function CardNewEvent () {
           </label>
           <input
             id='newEvent__description'
-            name='newEvent__description'
+            name='description'
             type="text"
+            value={newEvent.description}
+            onChange={ inputchange(newEvent, setNewEvent)}
           />
 
           <label
@@ -94,8 +142,10 @@ function CardNewEvent () {
           </label>
           <input
             id='newEvent__local'
-            name='newEvent__local'
+            name='location'
             type="text"
+            value={newEvent.location}
+            onChange={inputchange(newEvent, setNewEvent)}
           />
         </section>
 
@@ -103,9 +153,9 @@ function CardNewEvent () {
           <abbr title='Salvar seu evento'>
             <button
               type='button'
-              onClick={ () => event.preventDefault()}
+              onClick={ clickAndSave}
               className='newEvent__buttons-save'
-              disabled
+              disabled={isDisabled}
             >
               Salvar
             </button>

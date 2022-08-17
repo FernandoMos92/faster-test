@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { UserContext } from '../../Context/Context'
 
 function CardEvent () {
-  const [events] = useState([])
+  const { allEvents } = useContext(UserContext)
+  const [events] = useState([...allEvents])
+
   return (
     <section className='calendar__events'>
       <h3 className='calendar__events-title'>Next Event</h3>
