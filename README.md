@@ -1,5 +1,10 @@
 # Project Schedule
+<p style="display: block;">
 
+  ![GitHub repo file count](https://img.shields.io/github/directory-file-count/FernandoMos92/faster-test?style=flat-square)
+  ![GitHub repo size](https://img.shields.io/github/repo-size/FernandoMos92/faster-test)
+  ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/FernandoMos92/faster-test/main)
+</p>
 <p>
 This project wa a proposal for a technical test where there were some requiremente such as:</p>
 
@@ -24,6 +29,10 @@ This project wa a proposal for a technical test where there were some requiremen
 
 To upload this front-end application, the [Vercel](https://vercel.com/dashboard) platform was used.
 
+<p style="align=center">
+  <img src="./public/images/Peek 18-08-2022 18-44.gif" />
+</p>
+
 [Application Deployment](https://faster-test.vercel.app)
 
 <div style="display: flex; justify-content: space-between">
@@ -33,7 +42,7 @@ To upload this front-end application, the [Vercel](https://vercel.com/dashboard)
   
   ![image](https://img.shields.io/badge/Yarn-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white)
   ![image](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)
-  
+
   ![image](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
   ![image](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 
