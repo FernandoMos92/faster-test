@@ -26,6 +26,9 @@ To upload this front-end application, the [Vercel](https://vercel.com/dashboard)
 
 [Application Deployment](https://faster-test.vercel.app)
 
+<img src="{https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white}" />
+
+<img src="{https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white}" />
 ![image]({https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white})
 ![image]({https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white})
 
