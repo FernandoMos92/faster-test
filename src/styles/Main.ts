@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 const Scalendar = styled.main`
-  background-image: url('../../public/images/arrow-left.svg');
   display: flex;
   flex-flow: column nowrap;
   background-color: #FFF;
