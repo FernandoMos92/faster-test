@@ -17,7 +17,6 @@ const Scalendar = styled.main`
     padding: 24px;
     height: 375px;
     width: 420px;
-
     .calendar__container-month {
       display: flex;
       justify-content: space-between;
