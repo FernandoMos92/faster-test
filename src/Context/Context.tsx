@@ -2,6 +2,7 @@ import React, { createContext, ReactNode, useState, useEffect } from 'react'
 import readLocalStorage from '../utils/readLocalStorage'
 
 type eventType = {
+  id: number,
   date: string,
   hour: string,
   minute: string,
@@ -13,6 +14,8 @@ type eventType = {
 type UserContextTypes = {
   isOpenModal: boolean;
   setIsOpenModal: (newState: boolean) => void;
+  isDetailOpen: boolean;
+  setIsDetailOpen: (newState: boolean) => void;
   newEvent: eventType,
   setNewEvent: (newState: eventType) => void;
   setValue: (newState: string) => void;
@@ -29,6 +32,7 @@ type UserContextProps = {
 }
 
 const clearEvent = {
+  id: 0,
   date: '',
   hour: '1 am',
   minute: '0',
@@ -40,6 +44,8 @@ const clearEvent = {
 const initialValue = {
   isOpenModal: false,
   setIsOpenModal: () => { },
+  isDetailOpen: false,
+  setIsDetailOpen: () => {},
   newEvent: clearEvent,
   dateEvent: '',
   setDateEvent: () => { },
@@ -50,6 +56,7 @@ export const UserContext = createContext<UserContextTypes>(initialValue)
 
 export const UserContextProvider = ({ children }: UserContextProps) => {
   const [isOpenModal, setIsOpenModal] = useState(initialValue.isOpenModal)
+  const [isDetailOpen, setIsDetailOpen] = useState(initialValue.isOpenModal)
   const [newEvent, setNewEvent] = useState<eventType>(initialValue.newEvent)
   const [dateEvent, setDateEvent] = useState(new Date())
   const [allEvents, setAllEvents] = useState(initialValue.allEvents)
@@ -76,6 +83,8 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
   const scheduleContext = {
     isOpenModal,
     setIsOpenModal,
+    isDetailOpen,
+    setIsDetailOpen,
     newEvent,
     setNewEvent,
     dateEvent,
