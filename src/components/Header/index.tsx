@@ -5,6 +5,7 @@ import profileUser from '../../../public/images/profile.svg'
 import Sheader from '../../styles/Sheader'
 import generateDate from '../../utils/generateDate'
 import { UserContext } from '../../Context/Context'
+import { BsSearch } from 'react-icons/bs'
 
 function Header () {
   const date = generateDate()
@@ -29,6 +30,9 @@ function Header () {
         >
             + Create event
           </button>
+          <BsSearch
+            className='header__search-icon'
+          />
           <input
             className='header__search-input'
             type="text"
