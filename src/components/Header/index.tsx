@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import Image from '../../../node_modules/next/image'
 import bellsIcon from '../../../public/images/bell.svg'
 import profileUser from '../../../public/images/profile.svg'
-import Sheader from '../../styles/Sheader'
+import HeaderComponent from '../../styles/HeaderComponent'
 import generateDate from '../../utils/generateDate'
 import { UserContext } from '../../Context/Context'
 import { BsSearch } from 'react-icons/bs'
@@ -14,7 +14,7 @@ function Header () {
   const { setIsOpenModal } = MyContext
 
   return (
-   <Sheader>
+   <HeaderComponent>
         <section className='header__date'>
           <h2>
             {date.nameMonth}
@@ -45,7 +45,7 @@ function Header () {
             <Image src={profileUser} />
           </button>
         </section>
-      </Sheader>
+      </HeaderComponent>
   )
 }
 export default Header
