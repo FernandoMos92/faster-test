@@ -8,6 +8,7 @@ import generateSchudele from '../../utils/generateSchudele'
 import { inputchange } from '../../utils/inpuChange'
 import saveLocalStorage from '../../utils/saveLocalStorage'
 import formatDate from '../../utils/formatDate'
+import readLocalStorage from '../../utils/readLocalStorage'
 
 function CardNewEvent ({ temperature }: any) {
   const [temp] = useState(temperature.toFixed(1))
@@ -35,6 +36,7 @@ function CardNewEvent ({ temperature }: any) {
   function clickAndSave () {
     const dtEvent = formatDate(dateEvent)
     newEvent.date = dtEvent
+    newEvent.id = readLocalStorage().length + 1
     saveLocalStorage(newEvent)
     updateEvents()
     clearEventStage()
@@ -139,6 +141,14 @@ function CardNewEvent ({ temperature }: any) {
         </section>
 
         <section className='newEvent__container-buttons'>
+          <abbr title='Limpar os campos'>
+            <button
+              type='button'
+              onClick={clearForms}
+              className='newEvent__buttons-clear'>
+              Limpar
+            </button>
+          </abbr>
           <abbr title='Salvar seu evento'>
             <button
               type='button'
@@ -146,14 +156,6 @@ function CardNewEvent ({ temperature }: any) {
               className='newEvent__buttons-save'
               disabled={isDisabled}>
               Salvar
-            </button>
-          </abbr>
-          <abbr title='Limpar os campos'>
-            <button
-              type='button'
-              onClick={clearForms}
-              className='newEvent__buttons-clear'>
-              Limpar
             </button>
           </abbr>
         </section>
