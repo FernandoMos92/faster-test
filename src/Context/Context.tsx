@@ -16,6 +16,8 @@ type UserContextTypes = {
   setIsOpenModal: (newState: boolean) => void;
   isDetailOpen: boolean;
   setIsDetailOpen: (newState: boolean) => void;
+  deleteEvent: boolean;
+  setDeleteEvent: (newState: boolean) => void;
   newEvent: eventType,
   setNewEvent: (newState: eventType) => void;
   setValue: (newState: string) => void;
@@ -49,6 +51,8 @@ const initialValue = {
   newEvent: clearEvent,
   dateEvent: '',
   setDateEvent: () => { },
+  deleteEvent: '',
+  setDeleteEvent: () => { },
   allEvents: []
 }
 
@@ -60,6 +64,7 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
   const [newEvent, setNewEvent] = useState<eventType>(initialValue.newEvent)
   const [dateEvent, setDateEvent] = useState(new Date())
   const [allEvents, setAllEvents] = useState(initialValue.allEvents)
+  const [deleteEvent, setDeleteEvent] = useState(false)
 
   useEffect(() => {
     const dataBase = readLocalStorage()
@@ -91,7 +96,9 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
     setDateEvent,
     allEvents,
     updateEvents,
-    clearEventStage
+    clearEventStage,
+    deleteEvent,
+    setDeleteEvent
   }
 
   return (
