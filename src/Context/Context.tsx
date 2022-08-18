@@ -26,6 +26,8 @@ type UserContextTypes = {
   clearEventStage: () => void;
   dateEvent: Date;
   setDateEvent: (newState: any) => void;
+  filterEvents: any[];
+  setFilterEvents: (newState: any) => void;
 }
 
 const clearEvent = {
@@ -52,7 +54,9 @@ const initialValue = {
   updateEvents: () => { },
   clearEventStage: () => { },
   dateEvent: null,
-  setDateEvent: () => { }
+  setDateEvent: () => { },
+  filterEvents: [],
+  setFilterEvents: () => { }
 }
 
 type UserContextProps = {
@@ -68,6 +72,7 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
   const [dateEvent, setDateEvent] = useState(new Date())
   const [allEvents, setAllEvents] = useState(initialValue.allEvents)
   const [deleteEvent, setDeleteEvent] = useState(false)
+  const [filterEvents, setFilterEvents] = useState([])
 
   useEffect(() => {
     const dataBase = readLocalStorage()
@@ -102,7 +107,9 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
     deleteEvent,
     setDeleteEvent,
     updateEvents,
-    clearEventStage
+    clearEventStage,
+    filterEvents,
+    setFilterEvents
   }
 
   return (
