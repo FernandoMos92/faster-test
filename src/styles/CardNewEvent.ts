@@ -9,7 +9,7 @@ const NewEvent = styled.div`
   top: 11vh;
   left: 20vw;
   padding: 15px;
-  height: 450px;
+  height: 500px;
   width: 500px;
   z-index: 98;
 

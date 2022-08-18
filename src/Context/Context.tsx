@@ -1,4 +1,5 @@
-import React, { createContext, ReactNode, useState } from 'react'
+import React, { createContext, ReactNode, useState, useEffect } from 'react'
+import readLocalStorage from '../utils/readLocalStorage'
 
 type eventType = {
   date: string,
@@ -12,37 +13,36 @@ type eventType = {
 type UserContextTypes = {
   isOpenModal: boolean;
   setIsOpenModal: (newState: boolean) => void;
-   newEvent: {
-    date: string,
-    hour: string,
-    minute: string,
-    title: string,
-    description: string,
-    location: string
-   },
+  newEvent: eventType,
   setNewEvent: (newState: eventType) => void;
-  value: string;
   setValue: (newState: string) => void;
-  allEvents: any;
+  allEvents: eventType[];
   setAllEvents: (newState: string) => void;
+  updateEvents: () => void;
+  clearEventStage: () => void;
+  dateEvent: Date;
+  setDateEvent: (newState: string) => void;
 }
 
 type UserContextProps = {
   children: ReactNode
 }
 
+const clearEvent = {
+  date: '',
+  hour: '1 am',
+  minute: '0',
+  title: '',
+  description: '',
+  location: ''
+}
+
 const initialValue = {
   isOpenModal: false,
   setIsOpenModal: () => { },
-  newEvent: {
-    date: '',
-    hour: '',
-    minute: '',
-    title: '',
-    description: '',
-    location: ''
-  },
-  value: '',
+  newEvent: clearEvent,
+  dateEvent: '',
+  setDateEvent: () => { },
   allEvents: []
 }
 
@@ -50,19 +50,39 @@ export const UserContext = createContext<UserContextTypes>(initialValue)
 
 export const UserContextProvider = ({ children }: UserContextProps) => {
   const [isOpenModal, setIsOpenModal] = useState(initialValue.isOpenModal)
-  const [newEvent, setNewEvent] = useState(initialValue.newEvent)
-  const [value, setValue] = useState(new Date())
+  const [newEvent, setNewEvent] = useState<eventType>(initialValue.newEvent)
+  const [dateEvent, setDateEvent] = useState(new Date())
   const [allEvents, setAllEvents] = useState(initialValue.allEvents)
+
+  useEffect(() => {
+    const dataBase = readLocalStorage()
+    if (dataBase.length > 0) {
+      setAllEvents(dataBase)
+    }
+  }, [])
+
+  function updateEvents () {
+    const database = readLocalStorage()
+    if (database.length > 0) {
+      return setAllEvents(database)
+    }
+    return setAllEvents([])
+  }
+
+  function clearEventStage () {
+    setNewEvent(clearEvent)
+  }
 
   const scheduleContext = {
     isOpenModal,
     setIsOpenModal,
     newEvent,
     setNewEvent,
-    value,
-    setValue,
+    dateEvent,
+    setDateEvent,
     allEvents,
-    setAllEvents
+    updateEvents,
+    clearEventStage
   }
 
   return (

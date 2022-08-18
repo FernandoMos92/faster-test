@@ -7,7 +7,6 @@ import { UserContextProvider } from '../Context/Context'
 
 function Home ({ climate: { main: { temp } } }: any) {
   const defaultTemp: number = temp
-
   return (
     <UserContextProvider>
       <Aside />

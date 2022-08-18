@@ -6,13 +6,15 @@ import NewEvent from '../../styles/CardNewEvent'
 import clearForms from '../../utils/clearFroms'
 import generateSchudele from '../../utils/generateSchudele'
 import { inputchange } from '../../utils/inpuChange'
+import saveLocalStorage from '../../utils/saveLocalStorage'
+import formatDate from '../../utils/formatDate'
 
 function CardNewEvent ({ temperature }: any) {
   const [temp] = useState(temperature.toFixed(1))
   const [isDisabled, setIsDisabled] = useState(true)
 
   const { hours, minutes } = generateSchudele()
-  const { setIsOpenModal, newEvent, setNewEvent, allEvents, setAllEvents } = useContext(UserContext)
+  const { setIsOpenModal, newEvent, setNewEvent, updateEvents, dateEvent, clearEventStage } = useContext(UserContext)
 
   function handleButton () {
     setIsDisabled(true)
@@ -23,18 +25,12 @@ function CardNewEvent ({ temperature }: any) {
     }
   }
 
-  function clickAndSave (evt) {
-    const result = [...allEvents, newEvent]
-    setAllEvents(result)
-    const clearEvent = {
-      date: '',
-      hour: '',
-      minute: '',
-      title: '',
-      description: '',
-      location: ''
-    }
-    setNewEvent(clearEvent)
+  function clickAndSave () {
+    const dtEvent = formatDate(dateEvent)
+    newEvent.date = dtEvent
+    saveLocalStorage(newEvent)
+    updateEvents()
+    clearEventStage()
     setIsOpenModal(false)
   }
 
@@ -53,6 +49,7 @@ function CardNewEvent ({ temperature }: any) {
           <FaTemperatureLow style={ temp < 20 ? { color: '#4CA7A8' } : { color: '#d12004' }} />
         </abbr>
       </h2>
+      <h2>{`${formatDate(dateEvent)}`}</h2>
       <button
         className='newEvent_closeModal'
         onClick={ () => setIsOpenModal(false)}
@@ -74,6 +71,7 @@ function CardNewEvent ({ temperature }: any) {
               {
                 hours.map((hour) => (
                   <option
+                    defaultValue='1'
                     key={hour}
                     value={hour}
                   >
@@ -92,12 +90,13 @@ function CardNewEvent ({ temperature }: any) {
               onChange={ inputchange(newEvent, setNewEvent)}
             >
               {
-                minutes.map((minutes) => (
+                minutes.map((minute) => (
                   <option
-                    key={minutes}
-                    value={minutes}
+                    defaultValue='0'
+                    key={minute}
+                    value={minute}
                   >
-                    {minutes}
+                    {minute}
                   </option>
                 ))
               }

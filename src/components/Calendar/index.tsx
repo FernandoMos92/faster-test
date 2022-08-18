@@ -1,20 +1,20 @@
 import React, { useCallback, useContext } from 'react'
-import '@natscale/react-calendar/dist/main.css'
-import { Calendar } from '@natscale/react-calendar'
 import { UserContext } from '../../Context/Context'
+import { Calendar } from '@natscale/react-calendar'
+import '@natscale/react-calendar/dist/main.css'
 
 function MyCalendar () {
-  const context = useContext(UserContext)
+  const { dateEvent, setDateEvent } = useContext(UserContext)
   const onChange = useCallback(
     (val) => {
-      context.setValue(val)
+      setDateEvent(val)
     },
-    [context.setValue]
+    [setDateEvent]
   )
   return (
     <Calendar
       className="calendar__container"
-      value={context.value}
+      value={dateEvent}
       onChange={onChange}
       hideAdjacentDates
       fontSize={18}
