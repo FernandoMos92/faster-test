@@ -1,4 +1,4 @@
-import React, { ReactPropTypes, useContext } from 'react'
+import React, { useContext } from 'react'
 import Scalendar from '../../styles/Main'
 import MyCalendar from '../Calendar/index'
 import { UserContext } from '../../Context/Context'
