@@ -1,6 +1,6 @@
 import { DateSchema } from '../schema/dateSchema'
 
-function getMonth (input: number): string {
+export function getMonth (input: number): string {
   const allMonth = {
     1: 'Janeiro',
     2: 'Fevereiro',
@@ -19,7 +19,7 @@ function getMonth (input: number): string {
   return allMonth[input]
 }
 
-function getDay (input: number): string {
+export function getDay (input: number): string {
   const allDays = {
     0: 'Domingo',
     1: 'Segunda-Feira',
