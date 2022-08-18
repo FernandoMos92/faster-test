@@ -20,17 +20,12 @@ type UserContextTypes = {
   setDeleteEvent: (newState: boolean) => void;
   newEvent: eventType,
   setNewEvent: (newState: eventType) => void;
-  setValue: (newState: string) => void;
   allEvents: eventType[];
-  setAllEvents: (newState: string) => void;
+  setAllEvents: (newState: string | any) => void;
   updateEvents: () => void;
   clearEventStage: () => void;
   dateEvent: Date;
-  setDateEvent: (newState: string) => void;
-}
-
-type UserContextProps = {
-  children: ReactNode
+  setDateEvent: (newState: any) => void;
 }
 
 const clearEvent = {
@@ -47,13 +42,21 @@ const initialValue = {
   isOpenModal: false,
   setIsOpenModal: () => { },
   isDetailOpen: false,
-  setIsDetailOpen: () => {},
-  newEvent: clearEvent,
-  dateEvent: '',
-  setDateEvent: () => { },
-  deleteEvent: '',
+  setIsDetailOpen: () => { },
+  deleteEvent: false,
   setDeleteEvent: () => { },
-  allEvents: []
+  newEvent: clearEvent,
+  setNewEvent: () => { },
+  allEvents: [],
+  setAllEvents: () => { },
+  updateEvents: () => { },
+  clearEventStage: () => { },
+  dateEvent: null,
+  setDateEvent: () => { }
+}
+
+type UserContextProps = {
+  children: ReactNode
 }
 
 export const UserContext = createContext<UserContextTypes>(initialValue)
@@ -95,10 +98,11 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
     dateEvent,
     setDateEvent,
     allEvents,
-    updateEvents,
-    clearEventStage,
+    setAllEvents,
     deleteEvent,
-    setDeleteEvent
+    setDeleteEvent,
+    updateEvents,
+    clearEventStage
   }
 
   return (

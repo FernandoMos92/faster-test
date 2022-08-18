@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { AiOutlineClockCircle } from 'react-icons/ai'
 import { UserContext } from '../../Context/Context'
 import EventCard from '../../styles/EventCard'
