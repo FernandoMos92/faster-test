@@ -2,14 +2,15 @@
 
 <p>
 This project wa a proposal for a technical test where there were some requiremente such as:</p>
-    [ x ] -  Create new events;
-    [ ] -  Once created, a notification modal will appear for 10 s;
-    [ ] -  Edit events;
-    [ x ] -  Delete events;
-    [ x ] -  Store and persist data using localstorage;
-    [ x ] -  Consume data from the API https://openweathermap.org/api and bring fixed data to the city of São Paulo
-    [ x ] -  The new event modal must contain - (title, description, location, hour, minutes and data)
-    [ x ] -  Filter events by: - ​​(title, date or hour)
+
+- [ x ] Create new events;
+- [ ] Once created, a notification modal will appear for 10 s;
+- [ ] Edit events;
+- [ x ] Delete events;
+- [ x ] Store and persist data using localstorage;
+- [ x ] Consume data from the API https://openweathermap.org/api and bring fixed data to the city of São Paulo
+- [ x ] The new event modal must contain - (title, description, location, hour, minutes and data)
+- [ x ] Filter events by: - ​​(title, date or hour)
 
 <p>
   The technologies used to execute this project were:
