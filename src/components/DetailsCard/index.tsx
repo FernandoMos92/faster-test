@@ -8,7 +8,6 @@ import { formatHour } from '../../utils/formatHour'
 function DetailsCard (props: any) {
   const { setIsDetailOpen, deleteEvent, setDeleteEvent } = useContext(UserContext)
   const { title, description, hour, id, location, minute, date } = props.elements
-
   const objTime = {
     hour,
     minute
@@ -66,7 +65,7 @@ function DetailsCard (props: any) {
               )
         }
         {
-          deleteEvent && <DeleteEventModal />
+          deleteEvent && <DeleteEventModal identifyEvent={ id } />
         }
         <label htmlFor=''>Local do evento</label>
         {
@@ -87,7 +86,7 @@ function DetailsCard (props: any) {
               'TESTE'
             )
           : (
-              <p>{`${date} - ${formatHour(objTime) === 'undefined' ? 'null' : formatHour(objTime)}`}</p>
+              <p>{`${formatHour(objTime) === 'undefined' ? 'null' : formatHour(objTime)} - ${date}`}</p>
             )}
       </section>
       {edit
@@ -111,7 +110,8 @@ function DetailsCard (props: any) {
           )
         : (
             <abbr title='Excluir evento'>
-              <button
+            <button
+                id={id}
                 className='details__button-delete'
                 onClick={ handleDelete }
               >

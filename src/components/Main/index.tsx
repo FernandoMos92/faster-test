@@ -23,7 +23,7 @@ function Main ({ temperature }:any) {
   function handleDetails ({ target }) {
     const elementsLocal = readLocalStorage()
     elementsLocal.forEach((el) => {
-      if (el.id === +target.id) {
+      if (el.id === parseInt(target.id)) {
         const { date, description, hour, id, location, minute, title } = el
         setDetails({
           title,

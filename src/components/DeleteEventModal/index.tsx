@@ -1,9 +1,19 @@
 import React, { useContext } from 'react'
 import { UserContext } from '../../Context/Context'
 import ModalDelete from '../../styles/ModalDelete'
+import updateLocal from '../../utils/updateLoca'
 
-function DeleteEventModal () {
+function DeleteEventModal (props:any) {
   const myContext = useContext(UserContext)
+
+  const handleDelete = ():void => {
+    const { allEvents, setDeleteEvent } = myContext
+    const result = allEvents.filter((el) => el.id !== parseInt(props.identifyEvent))
+    updateLocal(result)
+    setDeleteEvent(false)
+    myContext.setIsDetailOpen(false)
+    myContext.updateEvents()
+  }
 
   return (
     <ModalDelete>
@@ -11,6 +21,7 @@ function DeleteEventModal () {
       <abbr title="Sim">
         <button
           className='deleteEvent__button-yes'
+          onClick={ handleDelete }
         >
           Sim
         </button>

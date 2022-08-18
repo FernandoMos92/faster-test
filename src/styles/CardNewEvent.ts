@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const NewEvent = styled.div`
+
   border: 2px groove #E8E8E8;
   background-color: #f2f2f2ee;
   border-radius: 6px;
