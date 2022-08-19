@@ -4,11 +4,11 @@ export default createGlobalStyle`
 
   * {
     background-color:  #FFFFFF;
+    box-sizing: border-box;
     color: #0F1527;
     font-family: 'DM Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
   }
 
   html {

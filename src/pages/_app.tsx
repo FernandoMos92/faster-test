@@ -7,8 +7,8 @@ import { UserContextProvider } from '../Context/UserContext'
 function MyApp ({ Component, pageProps }: AppProps) {
   return (
     <UserContextProvider>
-      <Component {...pageProps} />
       <GlobalStyle />
+      <Component {...pageProps} />
     </UserContextProvider>
   )
 }

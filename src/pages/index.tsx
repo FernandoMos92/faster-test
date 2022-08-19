@@ -1,16 +1,10 @@
 import React from 'react'
 import { GetServerSideProps } from 'next'
-import Aside from '../components/Aside/index'
-// import Main from '../components/Main/index'
+import HomePage from '../components/HomePage'
 
 function Home ({ climate: { main: { temp } } }: any) {
   const defaultTemp: number = temp
-  return (
-    <>
-      <Aside />
-      {/* <Main temperature={defaultTemp} /> */}
-    </>
-  )
+  return (<HomePage temperature={defaultTemp} />)
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {

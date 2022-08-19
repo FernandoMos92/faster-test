@@ -1,23 +1,27 @@
 import styled from 'styled-components'
 
-const Saside = styled.aside`  
+const Aside = styled.aside`  
+  align-items: center;
   border-right: 1px solid #E8E8E8;
-  background-color: #FFFFFF;
-  height: 100vh;
-  position: absolute;
-  width: 266px;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+  padding: 53px 26px 42px 26px;
+  width: 18.6%;
 
-  div {
-    align-items: center;
-    justify-content: center;
-    margin-top: 53px;
-    margin-bottom: 27px;
-    margin-left: 23px ;
-    display: flex;
-    width: 218px;
-    height: 71px;
+  .aside__image-logo {
     background-color: #355072;
+    height: 7.8%;
+    padding: 7.3% 9.8% 6.4% 8.4%;
+    width: 81.4%;
 
+    img {
+      background-color: transparent;
+    }
+  }
+    
+
+  /* div {
     .aside__main-container {
       .aside__list-icon {
         position: absolute;
@@ -119,7 +123,7 @@ const Saside = styled.aside`
         }
       }
     }
-  }
+  } */
 `
 
-export default Saside
+export default Aside

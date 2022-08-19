@@ -1,17 +1,9 @@
 import styled from 'styled-components'
 
-const Scalendar = styled.main`
-  display: flex;
-  flex-flow: column nowrap;
-  background-color: #FFF;
-  position: absolute;
-  top: 138px;
-  left:  266px;
-  height: 85.6vh;
-  width: 85.5vw;
-  padding: 32px 32px 0 32px;
-
-  .calendar__container {
+const Main = styled.main`
+  height: 100vh;
+  width: 100vw;
+  /* .calendar__container {
     border: 1px solid #E8E8E8;
     margin-bottom: 32px;
     padding: 24px;
@@ -77,7 +69,7 @@ const Scalendar = styled.main`
     ::-webkit-scrollbar {
       width: 1px;
     }
-  }
+  } */
 `
 
-export default Scalendar
+export default Main
