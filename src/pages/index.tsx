@@ -1,18 +1,15 @@
 import React from 'react'
 import { GetServerSideProps } from 'next'
-import Header from '../components/Header/index'
 import Aside from '../components/Aside/index'
-import Main from '../components/Main/index'
-import { UserContextProvider } from '../Context/Context'
+// import Main from '../components/Main/index'
 
 function Home ({ climate: { main: { temp } } }: any) {
   const defaultTemp: number = temp
   return (
-    <UserContextProvider>
+    <>
       <Aside />
-      <Header />
-      <Main temperature={defaultTemp} />
-    </UserContextProvider>
+      {/* <Main temperature={defaultTemp} /> */}
+    </>
   )
 }
 
