@@ -40,9 +40,9 @@ function Header () {
           <p className='header__date-fullDate'>{date.abbDate}</p>
         </section>
 
-        <section className='header__search'>
+        <section className='header__container-search'>
           <button
-            className='header__addButton-event'
+            className='header__button-newEvent'
             onClick={() => setIsOpenModal(true)}>
             + Create event
           </button>
