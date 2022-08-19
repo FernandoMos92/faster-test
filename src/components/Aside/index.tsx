@@ -4,47 +4,68 @@ import Logo from '../../../public/images/fasters.png'
 import { mainIcons, myAccontIcons, systemIcons } from '../../utils/icons'
 import Aside from './Aside'
 
-function NavBar () {
+function NavBar() {
   return (
     <Aside>
-      <span className='aside__image-logo'>
-        <Image src={Logo} alt=''/>
+      <span className='aside__image-logo default__aside-style'>
+        <Image src={Logo} alt='' />
       </span>
-      <section className='aside__main-container'>
-        <ul className='aside__list-icon'>
+
+      <nav className='aside__nav-pages default__aside-style'>
+        <ul className='aside__nav-options'>
           {mainIcons.map(({ icon, name }) => (
-            <li key={name}>
-              <Image src={icon} alt='icone' />
-              <span>{name}</span>
-            </li>
+            <span key={name} className='aside__nav-itens'>
+              <li>
+                <Image src={icon} alt='icone' />
+                <span>{name}</span>
+              </li>
+            </span>
           ))}
         </ul>
-      </section>
-      <section className='aside__myAccount-contianer'>
-        <p>My account</p>
-        {myAccontIcons.map(({ icon, name }) => (
-          <li key={name}>
-            <Image src={icon} alt='icone' />
-            <span>{name}</span>
-          </li>
-        ))}
-      </section>
-      <section className='aside__settings-contianer'>
-        <p>System</p>
-        {systemIcons.map(({ icon, name }) => (
-          <li key={name}>
-            <Image src={icon} alt='icone' />
-            <span
-              style={
-                name === 'Sair' ? { color: '#4CA7A8' } : { color: '#0F1527' }
-              }>
-              {name}
+      </nav>
+
+      <nav className='aside__nav-account default__aside-style'>
+        <label htmlFor='aside__list' className='aside__list-label'>
+          My account
+        </label>
+        <ul id='aside__list' className='aside__list'>
+          {myAccontIcons.map(({ icon, name }) => (
+            <span key={name} className='aside__nav-itens'>
+              <li>
+                <Image src={icon} alt='icone' />
+                <span>{name}</span>
+              </li>
             </span>
-          </li>
-        ))}
-      </section>
+          ))}
+        </ul>
+      </nav>
+
+      <nav className='aside__nav-system default__aside-style'>
+        <label htmlFor='aside__list' className='aside__list-label'>
+          System
+        </label>
+        <ul id='aside__list' className='aside__list'>
+          {systemIcons.map(({ icon, name }) => (
+            <span key={name} className='aside__nav-itens'>
+              <li>
+                <Image src={icon} alt='icone' />
+                <span>{name}</span>
+              </li>
+            </span>
+          ))}
+        </ul>
+      </nav>
     </Aside>
   )
 }
+
+// systemIcons
+
+// <span
+//               style={
+//                 name === 'Sair' ? { color: '#4CA7A8' } : { color: '#0F1527' }
+//               }>
+//               {name}
+//             </span>
 
 export default NavBar

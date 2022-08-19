@@ -1,129 +1,180 @@
 import styled from 'styled-components'
 
-const Aside = styled.aside`  
+const Aside = styled.aside`
   align-items: center;
-  border-right: 1px solid #E8E8E8;
+  border-right: 1px solid #e8e8e8;
   display: flex;
   flex-flow: column nowrap;
   height: 100%;
+  overflow-y: scroll;
   padding: 53px 26px 42px 26px;
-  width: 18.6%;
+  width: 268px;
+
+  ::-webkit-scrollbar {
+      width: 1px;
+    }
+
+  .default__aside-style {
+    height: 71px;
+    width: 218px;
+
+    ul {
+      li {
+        list-style: none;
+      }
+    }
+  }
 
   .aside__image-logo {
     background-color: #355072;
-    height: 7.8%;
     padding: 7.3% 9.8% 6.4% 8.4%;
-    width: 81.4%;
 
     img {
       background-color: transparent;
     }
   }
-    
 
-  /* div {
-    .aside__main-container {
-      .aside__list-icon {
-        position: absolute;
-        top: 151px;
-        left: 26px;
-        font-size: 16px;
+  .aside__nav-pages {
+    height: 19.1%;
+    margin-top: 27px;
+
+    .aside__nav-options {
+      display: flex;
+      flex-flow: column nowrap;
+      height: 100%;
+      justify-content: space-between;
+      list-style: none;
+      .aside__nav-itens {
+          li {
+            align-items: center;
+            border-radius: 6px;
+            display: flex;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 130%;
+            height: 48px;
+            padding: 12px;
+            
+            span {
+              background-color: transparent;
+              margin-left: 14px;
+          }
+
+          img {
+            background-color: transparent;
+            height: 24px;
+            width: 24px;
+            color: #4ca7a8 !important;
+          }
+          &:hover {
+            background-color: #e9f4f5;
+            span {
+              color: #4ca7a8 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .aside__nav-account {
+    height: 19.1%;
+    margin-top: 50px;
+
+    .aside__list-label {
+      color: #AEAEAE;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+    }
+
+    .aside__list {
+      margin-top: 32.5px;
+    }
+
+    .aside__nav-itens {
+          li {
+            align-items: center;
+            border-radius: 6px;
+            display: flex;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 130%;
+            height: 48px;
+            padding: 12px;
+            
+            span {
+              background-color: transparent;
+              margin-left: 14px;
+          }
+
+          img {
+            background-color: transparent;
+            height: 24px;
+            width: 24px;
+            color: #4ca7a8 !important;
+          }
+          &:hover {
+            background-color: #e9f4f5;
+            span {
+              color: #4ca7a8 !important;
+            }
+          }
+        }
+      }
+  }
+
+  .aside__nav-system {
+    height: 19.1%;
+    margin-top: 167px;
+
+    .aside__list-label {
+      color: #AEAEAE;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+    }
+
+    #aside__list > span:nth-child(1) > li {
+      margin-top: 37.5px;
+      margin-bottom: 15.7px;
+    }
+
+    #aside__list > span:nth-child(2) > li {
+      margin-bottom: 55.7px;
+    }
+
+    .aside__nav-itens {
       li {
         align-items: center;
+        border-radius: 6px;
         display: flex;
-        color: #0F1527;
-        list-style: none;
-        justify-content: flex-start;
-        line-height: 130%;
-        width: 216px;
-        padding: 12px;
-        font-family: 'DM Sans';
-        font-style: normal;
+        font-size: 16px;
         font-weight: 400;
-        font-size: calc( .25em + 1vw);
         line-height: 130%;
-        &:hover {
-          border-radius: 6px;
-          background-color: #E9F4F5;
-          color: #4CA7A8;
-        }
+        height: 48px;
+        padding: 12px;
+            
+            span {
+              background-color: transparent;
+              margin-left: 14px;
+          }
 
-        span {
-          margin-left: 16px;
-          font-weight: 500;
+          img {
+            background-color: transparent;
+            height: 24px;
+            width: 24px;
+            color: #4ca7a8 !important;
+          }
+          &:hover {
+            background-color: #e9f4f5;
+            span {
+              color: #4ca7a8 !important;
+            }
+          }
         }
       }
-    } 
   }
-    .aside__myAccount-contianer {
-      color: #AEAEAE;
-      font-weight: 400;
-      position: absolute;
-      top: 353px;
-      height: 209px;
-      width: 220px;
-         li {
-        align-items: center;
-        display: flex;
-         color: #0F1527;
-        list-style: none;
-        justify-content: flex-start;
-        line-height: 130%;
-        width: 216px;
-        padding: 12px;
-        font-family: 'DM Sans';
-        font-style: normal;
-        font-weight: 400;
-        font-size: calc( .25em + 1vw);
-        line-height: 130%;
-        &:hover {
-          border-radius: 6px;
-          background-color: #E9F4F5;
-          color: #4CA7A8;
-        }
-
-        span {
-          border-radius: 6px;
-          margin-left: 16px;
-          font-weight: 500;
-        }
-      }
-    }
-
-    .aside__settings-contianer {
-      color: #AEAEAE;
-      font-weight: 400;
-      position: absolute;
-      bottom: 40px;
-      height: 157px;
-      width: 220px;
-         li {
-        align-items: center;
-        display: flex;
-        list-style: none;
-        color: #0F1527;
-        justify-content: flex-start;
-        line-height: 130%;
-        width: 216px;
-        padding: 12px;
-        font-family: 'DM Sans';
-        font-style: normal;
-        font-weight: 400;
-        font-size: calc( .25em + 1vw);
-        line-height: 130%;
-         &:hover {
-          border-radius: 6px;
-          background-color: #E9F4F5;
-          color: #4CA7A8;
-        }
-
-        span {
-          margin-left: 16px;
-          font-weight: 500;
-        }
-      }
-    }
-  } */
 `
 
 export default Aside
