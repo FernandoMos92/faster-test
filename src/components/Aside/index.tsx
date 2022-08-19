@@ -4,7 +4,7 @@ import Logo from '../../../public/images/fasters.png'
 import { mainIcons, myAccontIcons, systemIcons } from '../../utils/icons'
 import Aside from './Aside'
 
-function NavBar() {
+function NavBar () {
   return (
     <Aside>
       <span className='aside__image-logo default__aside-style'>
@@ -49,7 +49,7 @@ function NavBar() {
             <span key={name} className='aside__nav-itens'>
               <li>
                 <Image src={icon} alt='icone' />
-                <span>{name}</span>
+                <span style={name === 'Sair' ? { color: '#4CA7A8' } : { color: '#0F1527' }}>{name}</span>
               </li>
             </span>
           ))}
@@ -58,14 +58,5 @@ function NavBar() {
     </Aside>
   )
 }
-
-// systemIcons
-
-// <span
-//               style={
-//                 name === 'Sair' ? { color: '#4CA7A8' } : { color: '#0F1527' }
-//               }>
-//               {name}
-//             </span>
 
 export default NavBar

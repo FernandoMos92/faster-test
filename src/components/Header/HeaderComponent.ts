@@ -1,17 +1,42 @@
 import styled from 'styled-components'
 
 const HeaderComponent = styled.header`
-  background-color: #FFFFFF;
+  align-items: center;
   border-bottom: 1px solid #E8E8E8;
   display: flex;
-  height: 8.56rem;
-  left: 266px;
-  padding: 3.44rem 2rem;
-  position: absolute;
-  top: 0;
-  width: 85.4%;
+  height: 15.44%;
+  justify-content: center;
+  width: 84.1%;
+  
+  .header__container {
+    display: flex;
+    justify-content: space-between;
+    height: 59px;
+    width: 91.12%;
 
-  .header__date {
+    .header__container-date {
+      .header__date-month {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 140%;
+      }
+  
+      .header__date-fullDate {
+        color: #AEAEAE;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1920px) {
+    width: 88.2%;
+  }
+
+ 
+
+  /* .header__date {
     margin-left: 2rem;
   }
 
@@ -81,7 +106,7 @@ const HeaderComponent = styled.header`
     font-size: 1.37rem;
     left: 11.87rem;
     position: absolute;
-  }
+  } */
 `
 
 export default HeaderComponent

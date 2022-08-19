@@ -2,9 +2,9 @@ import React, { useContext, useState } from 'react'
 import Image from '../../../node_modules/next/image'
 import bellsIcon from '../../../public/images/bell.svg'
 import profileUser from '../../../public/images/profile.svg'
-import HeaderComponent from '../../styles/HeaderComponent'
+import HeaderComponent from './HeaderComponent'
 import generateDate from '../../utils/generateDate'
-import { UserContext } from '../../Context/Context'
+import { UserContext } from '../../Context/UserContext'
 import { BsSearch } from 'react-icons/bs'
 
 function Header () {
@@ -32,31 +32,37 @@ function Header () {
 
   return (
     <HeaderComponent>
-      <section className='header__date'>
-        <h2>{date.nameMonth}</h2>
-        <p>{date.abbDate}</p>
-      </section>
-      <section className='header__search'>
-        <button
-          className='header__addButton-event'
-          onClick={() => setIsOpenModal(true)}>
-          + Create event
-        </button>
-        <BsSearch className='header__search-icon' />
-        <input
-          value={searchInput}
-          onChange={handleChange}
-          className='header__search-input'
-          type='text'
-          placeholder='Search task, event, calendar'
-        />
-        <button className='header__button-bell'>
-          <Image src={bellsIcon} />
-        </button>
-        <button className='header__button-user'>
-          <Image src={profileUser} />
-        </button>
-      </section>
+
+      <div className='header__container'>
+
+        <section className='header__container-date'>
+          <h2 className='header__date-month'>{date.nameMonth}</h2>
+          <p className='header__date-fullDate'>{date.abbDate}</p>
+        </section>
+
+        <section className='header__search'>
+          <button
+            className='header__addButton-event'
+            onClick={() => setIsOpenModal(true)}>
+            + Create event
+          </button>
+          <BsSearch className='header__search-icon' />
+          <input
+            value={searchInput}
+            onChange={handleChange}
+            className='header__search-input'
+            type='text'
+            placeholder='Search task, event, calendar'
+          />
+          <button className='header__button-bell'>
+            <Image src={bellsIcon} />
+          </button>
+          <button className='header__button-user'>
+            <Image src={profileUser} />
+          </button>
+        </section>
+
+      </div>
     </HeaderComponent>
   )
 }

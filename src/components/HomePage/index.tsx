@@ -6,6 +6,7 @@ import Scalendar from './Main'
 
 // Components import
 import Aside from '../Aside'
+import Header from '../Header'
 // import Schedule from '../Schedule/index'
 // import CardNewEvent from '../CardNewEvent/index'
 // import CardEvent from '../CardEvent/index'
@@ -45,6 +46,7 @@ function HomePage ({ temperature }:any) {
   return (
     <Scalendar>
       <Aside />
+      <Header />
       {/* <MyCalendar />
       <section className='calendar__events'>
         <h2 className='calendar__events-title'>Next Event</h2>
