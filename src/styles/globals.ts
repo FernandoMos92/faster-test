@@ -3,16 +3,18 @@ import { createGlobalStyle } from 'styled-components'
 export default createGlobalStyle`
 
   * {
+    background-color:  #FFFFFF;
+    color: #0F1527;
+    font-family: 'DM Sans', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
-  body {
-    background-color:  #F2F2F2;
-    color: #0F1527;
+  html {
     display: flex;
-    position: relative;
-    font-family: 'DM Sans', sans-serif;
+    flex-flow: row nowrap;
+    height: 100vh;
+    width: 100vw;
   }
 `
