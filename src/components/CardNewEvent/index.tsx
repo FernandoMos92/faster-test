@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { UserContext } from '../../Context/Context'
+import { UserContext } from '../../Context/UserContext'
 import { BsPinMapFill } from 'react-icons/bs'
 import { FaTemperatureLow } from 'react-icons/fa'
 import NewEvent from '../../styles/CardNewEvent'

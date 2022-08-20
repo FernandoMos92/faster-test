@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { UserContext } from '../../Context/Context'
+import { UserContext } from '../../Context/UserContext'
 import { AiOutlineClose, AiFillEdit } from 'react-icons/ai'
 import DeleteEventModal from '../DeleteEventModal/index'
 import Details from '../../styles/Details'

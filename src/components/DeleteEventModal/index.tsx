@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { UserContext } from '../../Context/Context'
+import { UserContext } from '../../Context/UserContext'
 import ModalDelete from '../../styles/ModalDelete'
 import updateLocal from '../../utils/updateLoca'
 
