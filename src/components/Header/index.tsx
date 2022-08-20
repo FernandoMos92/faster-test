@@ -14,7 +14,7 @@ function Header () {
   const MyContext = useContext(UserContext)
   const { allEvents, setIsOpenModal, setFilterEvents } = MyContext
 
-  const eventsFiltered = () => {
+  function eventsFiltered () {
     if (searchInput) {
       const filtered = allEvents.filter((el) => (
         el.title.includes(searchInput.toUpperCase()) ||
@@ -25,8 +25,9 @@ function Header () {
     }
   }
 
-  const handleChange = evt => {
-    setSearchInput(evt.target.value)
+  function handleChange ({ target }) {
+    const userInput = target.value.toUpperCase()
+    setSearchInput(userInput)
     eventsFiltered()
   }
 

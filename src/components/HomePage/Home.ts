@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
-const HomePage = styled.main`
-  border: 2px solid black;
-  color: #000000;
+const Home = styled.main`
+  display: flex;
   height: 100vh;
   width: 100vw;
 
+  .container__home-main {
+    width: 100%;
+  }
   /* .calendar__container {
     border: 1px solid #E8E8E8;
     margin-bottom: 32px;
@@ -75,4 +77,4 @@ const HomePage = styled.main`
   } */
 `
 
-export default HomePage
+export default Home

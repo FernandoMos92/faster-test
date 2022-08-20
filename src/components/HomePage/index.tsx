@@ -1,12 +1,12 @@
 import React from 'react'
-import Scalendar from './Main'
-// import MyCalendar from '../Calendar/index'
 // import { UserContext } from '../../Context/UserContext'
 // import readLocalStorage from '../../utils/readLocalStorage'
 
 // Components import
 import Aside from '../Aside'
 import Header from '../Header'
+import Home from './Home'
+import MainComponent from '../MainComponent'
 // import Schedule from '../Schedule/index'
 // import CardNewEvent from '../CardNewEvent/index'
 // import CardEvent from '../CardEvent/index'
@@ -44,11 +44,14 @@ function HomePage ({ temperature }:any) {
   // }
 
   return (
-    <Scalendar>
+    <Home>
       <Aside />
-      <Header />
-      {/* <MyCalendar />
-      <section className='calendar__events'>
+      <div className='container__home-main'>
+        <Header />
+        <MainComponent />
+      </div>
+        {/* <MyCalendar /> */}
+      {/* <section className='calendar__events'>
         <h2 className='calendar__events-title'>Next Event</h2>
         <CardEvent
           onClick={handleDetails}
@@ -63,7 +66,7 @@ function HomePage ({ temperature }:any) {
       {
         isOpenModal && <CardNewEvent temperature={ temperature } />
       } */}
-    </Scalendar>
+    </Home>
   )
 }
 
