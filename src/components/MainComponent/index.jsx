@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import MyCalendar from '../Calendar'
+import NextEvents from '../NextEvents'
 
 const Main = styled.main`
-  border: 2px solid black;
+  border-top: 1px solid #e8e8e8;
   display: flex;
   padding: 32px;
 
@@ -76,6 +77,13 @@ const Main = styled.main`
       right: 1rem;
     }
   }
+
+  .nextEvent {
+    color: #0f1527;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+  }
 `
 
 function MainComponent () {
@@ -83,6 +91,10 @@ function MainComponent () {
     <Main>
       <section className='mainComponent__left'>
         <MyCalendar />
+        <label htmlFor='nextEvent' className='nextEvent'>
+          Next Event
+        </label>
+        <NextEvents id='nextEvent' />
       </section>
       <hr className='mainComponent__separatorLine' />
       <section className='mainComponent__right'>Direita</section>

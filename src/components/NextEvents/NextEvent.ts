@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
-const EventCard = styled.div`
+const NextEvent = styled.div`
   overflow: scroll;
   overflow-x: hidden;
   position: relative;
   height: 370px;
-  width: 420px;
+  width: 100%;
 
   ::-webkit-scrollbar {
     background-color: transparent;
@@ -13,23 +13,22 @@ const EventCard = styled.div`
   }
 
   .event__notFound {
+    align-items: center;
+    display: flex;
     font-size: 22px;
-    font-weight: 400;
-    position: absolute;
-    text-align: center;
-    margin-left: 50px;
-    top: 140px;
+    height: 100%;
+    justify-content: center;
   }
 
   .calendar__events-list {
     .calendar__events-listItem {
       border: 1px solid #e8e8e8;
-      list-style: none;
-      width: 416px;
       height: 108px;
-      padding: 12px 16px;
+      list-style: none;
       margin-bottom: 10px;
+      padding: 12px 16px;
       transition: all 0.2s ease-in-out;
+      width: 416px;
       z-index: -99;
 
       &:first-child {
@@ -37,18 +36,18 @@ const EventCard = styled.div`
       }
 
       &:hover {
-        transform: scale(0.9);
+        background-color: #e9f4f5;
         color: #4ca7a8;
         cursor: pointer;
-        background-color: #e9f4f5;
+        transform: scale(0.9);
       }
 
       .eventCard__title {
         display: flex;
         flex-flow: column nowrap;
+        height: 44px;
         justify-content: space-evenly;
         width: 284px;
-        height: 44px;
 
         h3 {
           color: #0F1527;
@@ -75,8 +74,8 @@ const EventCard = styled.div`
         margin-top: 20px;
 
         p {
-          margin-left: 10px;
           font-size: 16px;
+          margin-left: 10px;
         }
       }
     }
@@ -86,4 +85,4 @@ const EventCard = styled.div`
     font-size: 24px;
   }
 `
-export default EventCard
+export default NextEvent

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { AiOutlineClockCircle } from 'react-icons/ai'
-import { UserContext } from '../../Context/Context'
-import EventCard from '../../styles/EventCard'
+import { UserContext } from '../../Context/UserContext'
+import NextEvent from './NextEvent'
 import { formatHour } from '../../utils/formatHour'
 import { getMonth } from '../../utils/generateDate'
 
-function CardEvent (props) {
+function NextEvents (props) {
   const { allEvents, filterEvents } = useContext(UserContext)
 
   const formatOutputDate = (date) => {
@@ -17,11 +17,11 @@ function CardEvent (props) {
   }
 
   return (
-    <EventCard>
+    <NextEvent>
       {
       allEvents.length === 0 && filterEvents.length === 0
         ? (
-        <h2 className='event__notFound'>Nenhum evento marcado</h2>
+        <p className='event__notFound'>Nenhum evento marcado</p>
           )
         : filterEvents.length > 0
           ? (
@@ -70,8 +70,8 @@ function CardEvent (props) {
         </ul>
 
             )}
-    </EventCard>
+    </NextEvent>
   )
 }
 
-export default CardEvent
+export default NextEvents
