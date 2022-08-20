@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import MyCalendar from '../Calendar'
 import NextEvents from '../NextEvents'
+import Schedule from '../Schedule'
 
 const Main = styled.main`
   border-top: 1px solid #e8e8e8;
@@ -18,8 +19,13 @@ const Main = styled.main`
   }
 
   .mainComponent__right {
+    border-top: 2px solid #e8e8e8;
     height: 800px;
+    overflow-y: scroll;
     width: 68%;
+    ::-webkit-scrollbar {
+      width: 1px;
+    }
   }
 
   .mainComponent__separatorLine {
@@ -97,7 +103,9 @@ function MainComponent () {
         <NextEvents id='nextEvent' />
       </section>
       <hr className='mainComponent__separatorLine' />
-      <section className='mainComponent__right'>Direita</section>
+      <section className='mainComponent__right'>
+        <Schedule />
+      </section>
     </Main>
   )
 }
