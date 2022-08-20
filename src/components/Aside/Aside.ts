@@ -175,6 +175,13 @@ const Aside = styled.aside`
         }
       }
   }
-`
 
+  @media screen and (min-width: 1440px){
+    height: 1080px;
+  }
+
+  @media screen and (min-width: 1920px){
+    height: 1080px;
+  }
+`
 export default Aside

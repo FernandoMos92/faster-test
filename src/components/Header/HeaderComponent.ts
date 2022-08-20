@@ -105,7 +105,7 @@ const HeaderComponent = styled.header`
    }
 
    @media screen and (min-width: 1440px){
-    width: 83.2vw;
+    width: 81vw;
 
      .header__container {
       width: 100%;
@@ -129,9 +129,9 @@ const HeaderComponent = styled.header`
    }
 
    @media screen and (min-width: 1920px){
-     width: 87.25vw;
+     width: 85.8vw;
     .header__container {
-      width: 100%;
+      width: 90%;
       margin-left: 50px;
 
       .header__container-search  {

@@ -41,6 +41,13 @@ tbody {
      height: 50%;
   }
 }
+
+@media screen and (min-width: 1440px){
+}
+
+  @media screen and (min-width: 1920px){
+  
+}
 `
 
 export default Table

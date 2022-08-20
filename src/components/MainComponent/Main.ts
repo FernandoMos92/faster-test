@@ -1,8 +1,4 @@
-import React from 'react'
 import styled from 'styled-components'
-import MyCalendar from '../Calendar'
-import NextEvents from '../NextEvents'
-import Schedule from '../Schedule'
 
 const Main = styled.main`
   border-top: 1px solid #e8e8e8;
@@ -33,9 +29,12 @@ const Main = styled.main`
   }
 
   .calendar__container {
+    align-items: center;
     border: 1px solid #e8e8e8;
-    margin-bottom: 32px;
+    display: flex;
     height: 355px;
+    justify-content: center;
+    margin-bottom: 32px;
     width: 100%;
     .calendar__container-month {
       display: flex;
@@ -90,24 +89,43 @@ const Main = styled.main`
     font-size: 20px;
     line-height: 130%;
   }
+
+    @media screen and (min-width: 1440px){
+      width: 99%;
+      height: 995px;
+
+    .mainComponent__left {
+      height: 100%;
+    }
+
+    .mainComponent__separatorLine {
+      width: .5px;
+      height: 100%;
+    }
+
+    .mainComponent__right {
+      height: 100%;
+    }
+  }
+
+    @media screen and (min-width: 1920px){
+      height: 995px;
+
+    .mainComponent__left {
+      height: 100%;
+    }
+
+    .mainComponent__separatorLine {
+      width: .5px;
+      height: 100%;
+    }
+
+    .mainComponent__right {
+      height: 100%;
+    }
+  }
+
+
 `
 
-function MainComponent () {
-  return (
-    <Main>
-      <section className='mainComponent__left'>
-        <MyCalendar />
-        <label htmlFor='nextEvent' className='nextEvent'>
-          Next Event
-        </label>
-        <NextEvents id='nextEvent' />
-      </section>
-      <hr className='mainComponent__separatorLine' />
-      <section className='mainComponent__right'>
-        <Schedule />
-      </section>
-    </Main>
-  )
-}
-
-export default MainComponent
+export default Main
