@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 const HeaderComponent = styled.header`
   align-items: center;
-  border-bottom: 1px solid #E8E8E8;
   display: flex;
   height: 15.44%;
   justify-content: center;
@@ -93,6 +92,7 @@ const HeaderComponent = styled.header`
      background: #FAFAFA;
      border: none;
      border-radius: .75rem;
+     cursor: pointer;
      height: 56px;
      width: 56px;
      img {
@@ -102,6 +102,53 @@ const HeaderComponent = styled.header`
 
    .header__button-bell {
     margin-right: 16px;
+   }
+
+   @media screen and (min-width: 1440px){
+    width: 83.2vw;
+
+     .header__container {
+      width: 100%;
+      margin-left: 50px;
+
+      .header__container-search  {
+        width: 92%;
+        .header__button-newEvent {
+          font-size: 18px;
+          width: 180px;
+        }
+
+        .header__search-icon {
+          left: 13.5rem;
+        }
+        .header__search-input{
+          width: 540px;
+        }
+      }
+    }
+   }
+
+   @media screen and (min-width: 1920px){
+     width: 87.25vw;
+    .header__container {
+      width: 100%;
+      margin-left: 50px;
+
+      .header__container-search  {
+        .header__button-newEvent {
+          font-size: 18px;
+          width: 200px;
+        }
+
+        .header__search-icon {
+          font-size: 22px;
+          left: 14.6rem;
+        }
+        .header__search-input{
+          width: 720px;
+        }
+      }
+    }
    }
    
   `

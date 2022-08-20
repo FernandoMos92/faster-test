@@ -50,9 +50,7 @@ function HomePage ({ temperature }:any) {
         <Header />
         <MainComponent />
       </div>
-        {/* <MyCalendar /> */}
-      {/* <section className='calendar__events'>
-        <h2 className='calendar__events-title'>Next Event</h2>
+      {/*
         <CardEvent
           onClick={handleDetails}
         />
