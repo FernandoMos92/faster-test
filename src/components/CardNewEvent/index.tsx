@@ -9,14 +9,10 @@ import { inputchange } from '../../utils/inpuChange'
 import saveLocalStorage from '../../utils/saveLocalStorage'
 import formatDate from '../../utils/formatDate'
 import readLocalStorage from '../../utils/readLocalStorage'
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 
 function CardNewEvent ({ temperature }: any) {
   const [temp] = useState(temperature.toFixed(1))
   const [isDisabled, setIsDisabled] = useState(true)
-
-  const notify = () => toast('Wow so easy!')
 
   const { hours, minutes } = generateSchudele()
   const {
@@ -45,7 +41,6 @@ function CardNewEvent ({ temperature }: any) {
     updateEvents()
     clearEventStage()
     setIsOpenModal(false)
-    await notify()
   }
 
   useEffect(() => {
@@ -54,7 +49,6 @@ function CardNewEvent ({ temperature }: any) {
 
   return (
     <NewEvent>
-       <ToastContainer />
       <h2>
         São Paulo{' '}
         <abbr title='Localização atual'>
