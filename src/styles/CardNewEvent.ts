@@ -1,23 +1,44 @@
 import styled from 'styled-components'
 
 const NewEvent = styled.div`
-
-  border: 2px groove #E8E8E8;
-  background-color: #f2f2f2ee;
+  background-color: #FFFFFF;
   border-radius: 6px;
-  color: #000;
-  position: absolute;
-  top: 11vh;
-  left: 20vw;
+  box-shadow: 0 0 12px #E8E8E8;
+  color: #141a29;
+  height: 935px;
+  left: 19.5vw;
   padding: 15px;
-  height: 500px;
-  width: 500px;
+  position: absolute;
+  top: 19vh;
+  width: 340px;
   z-index: 98;
 
-  h2 {
-    text-align: center;
-  }
+    h1 {
+      margin-top: 25px;
+      text-align: center;
+    }
 
+  .newEvent__header {
+    flex-flow: column nowrap;
+    display: flex;
+    margin-top: 35px;
+    height: 25%;
+    width: 100%;
+
+    label {
+      color: #AEAEAE;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    
+    h2, h3 {
+      margin-bottom: 5px;
+      margin-left: 30px;
+    }
+
+    hr {
+      margin: 40px 0;
+    }
 
   .newEvent_closeModal {
     border: none;
@@ -33,13 +54,21 @@ const NewEvent = styled.div`
       transform: scale(.8);
     }
   }
+  }
+
 
   .newEvent__form {
     align-items: flex-start;
+    border: 2px solid black;
     display: flex;
     flex-flow: column nowrap;
-    height: 80%;
-    padding: 15px;
+    label {
+      color: #AEAEAE;
+    }
+
+    .section__hour-event {
+      border: 2px solid black;
+    }
 
     .newEvent__container-input {
       display: flex;

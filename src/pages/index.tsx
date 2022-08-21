@@ -2,9 +2,9 @@ import React from 'react'
 import { GetServerSideProps } from 'next'
 import HomePage from '../components/HomePage'
 
-function Home ({ climate: { main: { temp } } }: any) {
-  const defaultTemp: number = temp
-  return (<HomePage temperature={defaultTemp} />)
+function Home ({ climate }: any) {
+  const defaultTemp: any = climate
+  return (<HomePage climate={defaultTemp} />)
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {

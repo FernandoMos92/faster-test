@@ -12,7 +12,7 @@ import MainComponent from '../MainComponent'
 // import CardEvent from '../CardEvent/index'
 // import DetailsCard from '../DetailsCard/index'
 
-function HomePage ({ temperature }:any) {
+function HomePage ({ climate }:any) {
   // const { isOpenModal, isDetailOpen, setIsDetailOpen } = useContext(UserContext)
   // const [details, setDetails] = useState({
   //   title: '',
@@ -48,7 +48,7 @@ function HomePage ({ temperature }:any) {
       <Aside />
       <div className='container__home-main'>
         <Header />
-        <MainComponent />
+        <MainComponent climate={climate} />
       </div>
       {/*
         <CardEvent

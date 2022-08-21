@@ -1,7 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { UserContext } from '../../Context/UserContext'
-import { BsPinMapFill } from 'react-icons/bs'
-import { FaTemperatureLow } from 'react-icons/fa'
 import NewEvent from '../../styles/CardNewEvent'
 import clearForms from '../../utils/clearFroms'
 import generateSchudele from '../../utils/generateSchudele'
@@ -33,7 +31,7 @@ function CardNewEvent ({ temperature }: any) {
     }
   }
 
-  async function clickAndSave () {
+  function clickAndSave () {
     const dtEvent = formatDate(dateEvent)
     newEvent.date = dtEvent
     newEvent.id = readLocalStorage().length + 1
@@ -49,29 +47,27 @@ function CardNewEvent ({ temperature }: any) {
 
   return (
     <NewEvent>
-      <h2>
-        São Paulo{' '}
-        <abbr title='Localização atual'>
-          <BsPinMapFill style={{ color: '#4CA7A8' }} />
+      <h1>Novo evento</h1>
+      <section className='newEvent__header'>
+        <label htmlFor='locationEvent'>Localização</label>
+        <h2 id='locationEvent'>São Paulo</h2>
+        <label htmlFor='temperatureEvent'>Temperatura atual</label>
+        <h3 id='temperatureEvent'>{`${temp} º `}</h3>
+        <label htmlFor='dateEvent'>Data do evento</label>
+        <h3 id='dateEvent'>{`${formatDate(dateEvent)}`}</h3>
+        <abbr title='Fecha a criação de novo evento'>
+          <button
+            className='newEvent_closeModal'
+            onClick={() => setIsOpenModal(false)}>
+            X
+          </button>
         </abbr>
-        {` - ${temp}º `}
-        <abbr title='Temperatura atual'>
-          <FaTemperatureLow
-            style={temp < 20 ? { color: '#4CA7A8' } : { color: '#d12004' }}
-          />
-        </abbr>
-      </h2>
-      <h2>{`${formatDate(dateEvent)}`}</h2>
-      <button
-        className='newEvent_closeModal'
-        onClick={() => setIsOpenModal(false)}>
-        X
-      </button>
+        <hr />
+      </section>
+
       <form className='newEvent__form'>
-        <section className='newEvent__container-hour'>
-          <h3 className='newEvent__container-hour-title'>
-            Selecione a hora do seu evento
-          </h3>
+        <label htmlFor='hour-event'>Qual será a hora do evento?</label>
+        <section id='hour-event' className='section__hour-event'>
           <div className='data__container-hour'>
             <label htmlFor='data__event-hour'>Hora</label>
             <select
@@ -101,11 +97,8 @@ function CardNewEvent ({ temperature }: any) {
             </select>
           </div>
         </section>
-
         <section className='newEvent__container-inputs'>
-          <label className='newEvent__label-title' htmlFor='newEvent__title'>
-            <h3>Titulo do seu evento</h3>
-          </label>
+          <label htmlFor="">Titulo do evento</label>
           <input
             id='newEvent__title'
             name='title'
@@ -113,12 +106,7 @@ function CardNewEvent ({ temperature }: any) {
             value={newEvent.title}
             onChange={inputchange(newEvent, setNewEvent)}
           />
-
-          <label
-            className='newEvent__label-description'
-            htmlFor='newEvent__description'>
-            <h3>Descrição do seu evento</h3>
-          </label>
+          <label htmlFor="">Descrição do evento</label>
           <input
             id='newEvent__description'
             name='description'
@@ -127,11 +115,8 @@ function CardNewEvent ({ temperature }: any) {
             onChange={inputchange(newEvent, setNewEvent)}
           />
 
-          <label
-            className='newEvent__label-location'
-            htmlFor='newEvent__location'>
-            <h3>Local do seu evento</h3>
-          </label>
+          <label htmlFor="">Local do evento</label>
+
           <input
             id='newEvent__local'
             name='location'

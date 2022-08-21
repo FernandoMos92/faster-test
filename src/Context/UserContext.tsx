@@ -56,7 +56,9 @@ const initialValue = {
   dateEvent: null,
   setDateEvent: () => { },
   filterEvents: [],
-  setFilterEvents: () => { }
+  setFilterEvents: () => { },
+  climate: {},
+  setCliamte: () => { }
 }
 
 type UserContextProps = {
@@ -73,6 +75,7 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
   const [allEvents, setAllEvents] = useState(initialValue.allEvents)
   const [deleteEvent, setDeleteEvent] = useState(false)
   const [filterEvents, setFilterEvents] = useState([])
+  const [climate, setClimate] = useState(initialValue.climate)
 
   useEffect(() => {
     const dataBase = readLocalStorage()
@@ -109,7 +112,9 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
     updateEvents,
     clearEventStage,
     filterEvents,
-    setFilterEvents
+    setFilterEvents,
+    climate,
+    setClimate
   }
 
   return (
