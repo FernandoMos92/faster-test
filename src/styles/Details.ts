@@ -2,24 +2,34 @@ import styled from 'styled-components'
 
 const Details = styled.div`
   background-color: #355072;
-  color: #f2f2f2;
   border-radius: 6px;
-  position: absolute;
-  top: 32px;
+  color: #f2f2f2;
+  height: 800px;
   padding: 20px;
-  padding-top: 40px;
-  height: 95%;
-  width: 420px;
+  position: absolute;
   text-align: center;
+  top: 165px;
+  width: 300px;
+  z-index: 99;
 
-  .details__icon-close,
-  .details__icon-edit {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+  .details__header {
+    background-color: transparent;
+    position: relative;
+    margin-top: 40px;
+    height: 40px;
+
+    .details__icon-close {
+      background-color: transparent;
+      position: absolute;
+      top: -40px;
+      right: 0px;
+    }
   }
 
+
+
   .details__icon-edit {
+    background-color: transparent;
     cursor: pointer;
     top: 46px;
     right: 60px;
@@ -33,7 +43,6 @@ const Details = styled.div`
   .details__button-delete,
   .details__button-save,
   .details__button-close {
-    position: absolute;
     cursor: pointer;
     bottom: 10px;
     font-weight: 600;
@@ -60,11 +69,16 @@ const Details = styled.div`
   }
 
   .details__container-information {
+    background-color: transparent;
     display: flex;
     flex-flow: column nowrap;
     height: 80%;
     margin-top: 30px;
     padding: 20px;
+  }
+  
+  h2 {
+    background-color: transparent;
   }
 
   label {
@@ -72,12 +86,14 @@ const Details = styled.div`
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: 10px;
+    background-color: transparent;
   }
 
   p {
     text-align: left;
     margin-left: 30px;
     margin-bottom: 10px;
+    background-color: transparent;
   }
 
   input {

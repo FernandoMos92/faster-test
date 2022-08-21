@@ -22,13 +22,14 @@ const NextEvent = styled.div`
 
   .calendar__events-list {
     .calendar__events-listItem {
-      border: 1px solid #e8e8e8;
+      border: 1px solid #e9f4f5;
+      border-radius: 6px;
       height: 108px;
       list-style: none;
       margin-bottom: 10px;
       padding: 12px 16px;
       transition: all 0.2s ease-in-out;
-      width: 416px;
+      width: 290px;
       z-index: -99;
 
       &:first-child {
@@ -40,16 +41,22 @@ const NextEvent = styled.div`
         color: #4ca7a8;
         cursor: pointer;
         transform: scale(0.9);
+
+        .eventCard__title {
+          background-color: #e9f4f5;
+        }
       }
 
       .eventCard__title {
+        background-color: transparent;
         display: flex;
         flex-flow: column nowrap;
         height: 44px;
         justify-content: space-evenly;
-        width: 284px;
+        width: 100%;
 
         h3 {
+          background-color: transparent;
           color: #0F1527;
           font-weight: 700;
           font-size: 16px;
@@ -57,6 +64,7 @@ const NextEvent = styled.div`
         }
 
         p {
+          background-color: transparent;
           color: #B4BAC5;
           font-weight: 400;
           font-size: 16px;
@@ -66,6 +74,7 @@ const NextEvent = styled.div`
 
       .eventCard__hours {
         align-items: center;
+        background-color: transparent;
         color: #4CA7A8;
         display: flex;
         font-size: 12px;
@@ -74,6 +83,7 @@ const NextEvent = styled.div`
         margin-top: 20px;
 
         p {
+          background-color: transparent;
           font-size: 16px;
           margin-left: 10px;
         }
@@ -82,7 +92,26 @@ const NextEvent = styled.div`
   }
 
   .eventCard__icon-clock {
+    background-color: transparent;
     font-size: 24px;
+  }
+
+  @media screen and (min-width: 1440px){
+    .calendar__events-list {
+      .calendar__events-listItem {
+        width: 100%;
+        
+      }
+     }
+  }
+
+  @media screen and (min-width: 1920px) {
+     .calendar__events-list {
+      .calendar__events-listItem {
+        width: 100%;
+        
+      }
+     }
   }
 `
 export default NextEvent

@@ -16,28 +16,30 @@ function DetailsCard (props: any) {
   const [edit, setEdit] = useState(false)
 
   const handleDelete = (evt) => {
-    console.log(evt.target.id)
     setDeleteEvent(true)
   }
 
+  // {!edit &&
+  //   (
+  //     <abbr title='Editar evento'>
+  //       <AiFillEdit
+  //         className='details__icon-edit'
+  //         onClick={() => setEdit(true)}
+  //       />
+  //     </abbr>
+  //   )}
+
   return (
     <Details id={id}>
-      <AiOutlineClose
-        onClick={() => setIsDetailOpen(false)}
-        className='details__icon-close'
-      />
-      <h2>
-        {edit ? 'Editar evento' : 'Detalhes do evento'}
-      </h2>
-      {!edit &&
-      (
-        <abbr title='Editar evento'>
-          <AiFillEdit
-            className='details__icon-edit'
-            onClick={() => setEdit(true)}
-          />
-        </abbr>
-      )}
+      <section className='details__header'>
+        <AiOutlineClose
+          onClick={() => setIsDetailOpen(false)}
+          className='details__icon-close'
+        />
+        <h2>
+          {edit ? 'Editar evento' : 'Detalhes do evento'}
+        </h2>
+      </section>
       <section className='details__container-information'>
         <label htmlFor=''>Titulo</label>
         {
