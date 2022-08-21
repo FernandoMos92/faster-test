@@ -59,7 +59,7 @@ const NewEvent = styled.div`
 
   .newEvent__form {
     align-items: flex-start;
-    border: 2px solid black;
+    height: 60%;
     display: flex;
     flex-flow: column nowrap;
     label {
@@ -67,51 +67,63 @@ const NewEvent = styled.div`
     }
 
     .section__hour-event {
-      border: 2px solid black;
+      align-items: center;
+      display: flex;
+      height: 60px;
+      margin-top: 10px;
+      padding: 5px;
+      position: relative;
+      width: 100%;
+
+      label {
+        position: absolute;
+        margin-left: 10px;
+        top: 0;
+      }
+      select {
+        margin-left: 10px;
+        option {
+          height: 30% !important;
+          border: 6px;
+        }
+      }
+
+      
     }
 
-    .newEvent__container-input {
+    .newEvent__container-inputs {
+      align-items: center;
       display: flex;
       flex-flow: column nowrap;
-      align-items: center;
-      justify-content: center;
+      height: 70%;
+      justify-content: space-evenly;
       padding: 10px;
       width: 100%;
+
       .default_style {
         border: none;
         border-bottom: 2px solid #000000;
         border-radius: 6px;
         margin-bottom: 5px;
+        font-size: 22px;
         height: 3vh;
         letter-spacing: 2px;
-        width: 60%;
         padding: 10px;
         user-select: none;
         outline: none;
+        width: 60%;
       }
       .newEvent__form-title {
-        width: 80%;
-        text-transform: uppercase;
+        font-size: 18px;
         font-weight: 600;
+        text-transform: uppercase;
+        width: 80%;
       }
       .newEvent__form-description {
-        margin-top: 15px;
+        font-size: 18px;
         height: 8vh;
+        margin-top: 15px;
         width: 80%;
-      }
-    }
-
-    .newEvent__container-time {
-      width: 100%;
-      padding-left: 70px;
-
-      .newEvent__section-hours {
-        :first-child {
-          margin-right: 15px;
-        }
-      }
-      .newEvent__form-moment {
-        margin-left: 10px;
       }
     }
 
@@ -149,63 +161,35 @@ const NewEvent = styled.div`
     }
   }
 
-  .newEvent__container-hour {
-    height: 10vh;
-    width: 98%;
-
-    .newEvent__container-hour-title {
-      font-size: 22px;
-      margin-bottom: 20px;
-    }
-
-    .data__container-hour {
-      margin-left: 25px;
-    }
-
-    .data__container-hour, .data__container-minute {
-      display: flex;
-      flex-flow: column nowrap;
-      display: inline;
-      margin-right: 15px;
-    }
-
-    label {
-      font-size: 16px;
-      color: black;
-      margin-right: 5px;
-    }
-
-    .data__event-hour, .data__event-minute {
-      border-bottom: 2px solid gray;
-      border-radius: 4px;
-      padding: 5px;
-      outline: none;
-      width: 80px;
-    } 
-  }
-
-  .newEvent__container-inputs {
-    height: 15vh;
-    display: flex;
-    flex-flow: column nowrap;
-    width: 98%;
-  }
-
-  .newEvent__container-inputs > label > h3{
-    margin-bottom: 10px;
-    font-size: 22px;
-  }
-
   .newEvent__container-inputs > input {
     border: none;
     border-bottom: 2px solid gray;
     border-radius: 6px;
+    font-size: 22px;
     padding: 5px;
     outline: none;
-    margin-bottom: 10px;
-    margin-left: 65px;
-    width: 70%;
+    margin-top: 10px;
+    width: 100%;
   }
+
+  @media screen and (min-width: 1920px) {
+    left: 18.75rem;
+    width: 28.12rem;
+    
+    .newEvent__form {
+      .hour-event {
+        text-align: center;
+        padding-left: 30px;
+        width: 100%;
+      }
+      .section__hour-event {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
 
 `
 

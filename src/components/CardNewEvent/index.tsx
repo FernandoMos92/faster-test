@@ -28,8 +28,8 @@ function CardNewEvent () {
 
   function handleButton () {
     setIsDisabled(true)
-    const { title, date } = newEvent
-    const checked = title.length > 0 || date.length > 0
+    const { title, hour } = newEvent
+    const checked = title.length > 0 && hour.length > 0
     if (checked) {
       setIsDisabled(false)
     }
@@ -78,7 +78,8 @@ function CardNewEvent () {
       </section>
 
       <form className='newEvent__form'>
-        <label htmlFor='hour-event'>Qual será a hora do evento?</label>
+        <label htmlFor='hour-event' className='hour-event'>Qual será a hora do evento?</label>
+
         <section id='hour-event' className='section__hour-event'>
           <div className='data__container-hour'>
             <label htmlFor='data__event-hour'>Hora</label>
@@ -92,7 +93,8 @@ function CardNewEvent () {
                   {hour}
                 </option>
               ))}
-            </select>
+        </select>
+
           </div>
           <div className='data__container-minute'>
             <label htmlFor='data__event-minute'>Minutos</label>
@@ -109,6 +111,7 @@ function CardNewEvent () {
             </select>
           </div>
         </section>
+
         <section className='newEvent__container-inputs'>
           <label htmlFor="">Titulo do evento</label>
           <input
@@ -157,6 +160,7 @@ function CardNewEvent () {
             </button>
           </abbr>
         </section>
+
       </form>
     </NewEvent>
   )

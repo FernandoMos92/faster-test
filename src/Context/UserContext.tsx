@@ -81,7 +81,7 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
 
   async function getClimate () {
     const myKEY = 'f833b279a543c62aae02994fbeb7b3b8'
-    const city = 'São Paulo'
+    const city = 'São paulo'
     const URL_API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myKEY}&units=metric`
     const request = await fetch(URL_API)
     const response = await request.json()
