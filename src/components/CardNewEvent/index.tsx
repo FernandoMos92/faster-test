@@ -8,19 +8,23 @@ import saveLocalStorage from '../../utils/saveLocalStorage'
 import formatDate from '../../utils/formatDate'
 import readLocalStorage from '../../utils/readLocalStorage'
 
-function CardNewEvent ({ temperature }: any) {
-  const [temp] = useState(temperature.toFixed(1))
-  const [isDisabled, setIsDisabled] = useState(true)
+import { AiFillCloud } from 'react-icons/ai'
+import { BsFillSunFill, BsFillCloudRainFill } from 'react-icons/bs'
 
-  const { hours, minutes } = generateSchudele()
+function CardNewEvent () {
   const {
     setIsOpenModal,
     newEvent,
     setNewEvent,
     updateEvents,
     dateEvent,
-    clearEventStage
+    clearEventStage,
+    climate
   } = useContext(UserContext)
+  const [isDisabled, setIsDisabled] = useState(true)
+  const { name, main, weather } = climate
+
+  const { hours, minutes } = generateSchudele()
 
   function handleButton () {
     setIsDisabled(true)
@@ -41,6 +45,12 @@ function CardNewEvent ({ temperature }: any) {
     setIsOpenModal(false)
   }
 
+  const iconClimate = {
+    Clouds: <AiFillCloud />,
+    Rain: <BsFillCloudRainFill />,
+    Clear: <BsFillSunFill />
+  }
+
   useEffect(() => {
     handleButton()
   }, [newEvent.date, newEvent.title])
@@ -50,9 +60,11 @@ function CardNewEvent ({ temperature }: any) {
       <h1>Novo evento</h1>
       <section className='newEvent__header'>
         <label htmlFor='locationEvent'>Localização</label>
-        <h2 id='locationEvent'>São Paulo</h2>
+        <h2 id='locationEvent'>{ name }</h2>
         <label htmlFor='temperatureEvent'>Temperatura atual</label>
-        <h3 id='temperatureEvent'>{`${temp} º `}</h3>
+        <h3 id='temperatureEvent'>
+          {`${main.temp.toFixed(1)} º`} {iconClimate[weather[0].main]}
+        </h3>
         <label htmlFor='dateEvent'>Data do evento</label>
         <h3 id='dateEvent'>{`${formatDate(dateEvent)}`}</h3>
         <abbr title='Fecha a criação de novo evento'>

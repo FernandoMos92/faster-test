@@ -1,18 +1,14 @@
 import React from 'react'
-// import { UserContext } from '../../Context/UserContext'
-// import readLocalStorage from '../../utils/readLocalStorage'
 
 // Components import
 import Aside from '../Aside'
 import Header from '../Header'
 import Home from './Home'
 import MainComponent from '../MainComponent'
-// import Schedule from '../Schedule/index'
-// import CardNewEvent from '../CardNewEvent/index'
 // import CardEvent from '../CardEvent/index'
 // import DetailsCard from '../DetailsCard/index'
 
-function HomePage ({ climate }:any) {
+function HomePage () {
   // const { isOpenModal, isDetailOpen, setIsDetailOpen } = useContext(UserContext)
   // const [details, setDetails] = useState({
   //   title: '',
@@ -48,7 +44,7 @@ function HomePage ({ climate }:any) {
       <Aside />
       <div className='container__home-main'>
         <Header />
-        <MainComponent climate={climate} />
+        <MainComponent />
       </div>
       {/*
         <CardEvent

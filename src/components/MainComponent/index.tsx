@@ -7,14 +7,14 @@ import Main from './Main'
 import { UserContext } from '../../Context/UserContext'
 import CardNewEvent from '../CardNewEvent'
 
-function MainComponent ({ climate }: any) {
+function MainComponent () {
   const myContext = useContext(UserContext)
   const { isOpenModal } = myContext
 
   return (
     <Main>
       <section className='mainComponent__left'>
-        {isOpenModal && <CardNewEvent climate={climate} />}
+        {isOpenModal && <CardNewEvent />}
         <MyCalendar />
         <label htmlFor='nextEvent' className='nextEvent'>
           Next Event

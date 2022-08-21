@@ -28,6 +28,8 @@ type UserContextTypes = {
   setDateEvent: (newState: any) => void;
   filterEvents: any[];
   setFilterEvents: (newState: any) => void;
+  climate: any;
+  setClimate: (newState: any) => void;
 }
 
 const clearEvent = {
@@ -58,7 +60,7 @@ const initialValue = {
   filterEvents: [],
   setFilterEvents: () => { },
   climate: {},
-  setCliamte: () => { }
+  setClimate: () => { }
 }
 
 type UserContextProps = {
@@ -77,11 +79,25 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
   const [filterEvents, setFilterEvents] = useState([])
   const [climate, setClimate] = useState(initialValue.climate)
 
+  async function getClimate () {
+    const myKEY = 'f833b279a543c62aae02994fbeb7b3b8'
+    const city = 'São Paulo'
+    const URL_API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myKEY}&units=metric`
+    const request = await fetch(URL_API)
+    const response = await request.json()
+    return response
+  }
+
   useEffect(() => {
     const dataBase = readLocalStorage()
     if (dataBase.length > 0) {
       setAllEvents(dataBase)
     }
+
+    (async () => {
+      const getTemp = await getClimate()
+      if (!Object.keys(climate).length) setClimate(getTemp)
+    })()
   }, [])
 
   function updateEvents () {
