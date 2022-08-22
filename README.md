@@ -9,8 +9,8 @@
 This project wa a proposal for a technical test where there were some requiremente such as:</p>
 
 - [x] Create new events;
-- [ ] Once created, a notification modal will appear for 10 s;
-- [ ] Edit events;
+- [x] Once created, a notification modal will appear for 10 s;
+- [x] Edit events;
 - [x] Delete events;
 - [x] Store and persist data using localstorage;
 - [x] Consume data from the API https://openweathermap.org/api and bring fixed data to the city of São Paulo
