@@ -20,6 +20,7 @@ const Details = styled.div`
 
     .details__icon-close {
       background-color: transparent;
+      cursor: pointer;
       position: absolute;
       top: -40px;
       right: 0px;
@@ -29,18 +30,21 @@ const Details = styled.div`
 
 
   .details__icon-edit {
-    background-color: transparent;
+    background-color: #355072;
     cursor: pointer;
     top: 46px;
     right: 60px;
     transition: all 0.2s ease-in-out;
-
+    position: absolute;
+    right: 10px;
+    top: 8px;
     &:active {
       transform: scale(1.2);
     }
   }
 
   .details__button-delete,
+  .details__button-edit,
   .details__button-save,
   .details__button-close {
     cursor: pointer;
@@ -66,6 +70,18 @@ const Details = styled.div`
 
   .details__button-close {
     left: 20px;
+  }
+
+  .details__container-buttons {
+    display: flex;
+    flex-flow: column nowrap;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color:  transparent;
+    height: 20%;
+    justify-content: space-evenly;
   }
 
   .details__container-information {
@@ -113,9 +129,17 @@ const Details = styled.div`
   }
 
   abbr {
+    background-color: transparent;
     width: 100%;
     padding: 0;
     margin: 0;
+  }
+
+  @media screen and (min-width: 1441px){
+    width: 350px;
+  }
+   @media screen and (min-width: 1920px){
+    width: 500px;
   }
 `
 

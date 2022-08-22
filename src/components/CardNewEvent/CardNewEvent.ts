@@ -172,9 +172,14 @@ const NewEvent = styled.div`
     width: 100%;
   }
 
+  @media screen and (min-width: 1441px) {
+    left: 17.8rem;
+    width: 24rem;
+  }
+
   @media screen and (min-width: 1920px) {
     left: 18.75rem;
-    width: 28.12rem;
+    width: 31.3rem;
     
     .newEvent__form {
       .hour-event {

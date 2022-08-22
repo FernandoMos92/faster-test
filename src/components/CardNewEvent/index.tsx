@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { UserContext } from '../../Context/UserContext'
-import NewEvent from '../../styles/CardNewEvent'
+import NewEvent from './CardNewEvent'
 import clearForms from '../../utils/clearFroms'
 import generateSchudele from '../../utils/generateSchudele'
 import { inputchange } from '../../utils/inpuChange'
@@ -12,7 +12,6 @@ import { AiFillCloud } from 'react-icons/ai'
 import { BsFillSunFill, BsFillCloudRainFill } from 'react-icons/bs'
 
 function CardNewEvent (props:any) {
-  console.log('🚀 -> props', props)
   const {
     setIsOpenModal,
     newEvent,

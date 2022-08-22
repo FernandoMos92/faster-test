@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { UserContext } from '../../Context/UserContext'
 import { AiOutlineClose, AiFillEdit } from 'react-icons/ai'
 import DeleteEventModal from '../DeleteEventModal/index'
-import Details from '../../styles/Details'
+import Details from './Details'
 import { formatHour } from '../../utils/formatHour'
 
 function DetailsCard (props: any) {
@@ -19,23 +19,24 @@ function DetailsCard (props: any) {
     setDeleteEvent(true)
   }
 
-  // {!edit &&
-  //   (
-  //     <abbr title='Editar evento'>
-  //       <AiFillEdit
-  //         className='details__icon-edit'
-  //         onClick={() => setEdit(true)}
-  //       />
-  //     </abbr>
-  //   )}
-
   return (
     <Details id={id}>
       <section className='details__header'>
-        <AiOutlineClose
-          onClick={() => setIsDetailOpen(false)}
-          className='details__icon-close'
+        <abbr title="Fechar os detalhes do evento">
+          <AiOutlineClose
+            onClick={() => setIsDetailOpen(false)}
+            className='details__icon-close'
+          />
+        </abbr>
+          { !edit &&
+    (
+      <abbr title='Editar evento'>
+        <AiFillEdit
+          className='details__icon-edit'
+          onClick={() => setEdit(true)}
         />
+      </abbr>
+    ) }
         <h2>
           {edit ? 'Editar evento' : 'Detalhes do evento'}
         </h2>
@@ -94,8 +95,8 @@ function DetailsCard (props: any) {
       </section>
       {edit
         ? (
-            <>
-              <abbr title=''>
+            <div className='details__container-buttons'>
+              <abbr title='Fechar a edição sem salvar'>
                 <button
                   className='details__button-close'
                   onClick={() => setEdit(false)}>
@@ -109,9 +110,19 @@ function DetailsCard (props: any) {
                   Salvar edição
                 </button>
               </abbr>
-            </>
+            </div>
           )
         : (
+          <div className='details__container-buttons'>
+            <abbr title='Editar evento'>
+            <button
+                id={id}
+                className='details__button-edit'
+                onClick={ () => setEdit(true) }
+              >
+                Editar evento
+              </button>
+            </abbr>
             <abbr title='Excluir evento'>
             <button
                 id={id}
@@ -121,6 +132,7 @@ function DetailsCard (props: any) {
                 Excluir evento
               </button>
             </abbr>
+          </div>
           )}
     </Details>
   )

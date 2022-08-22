@@ -17,8 +17,8 @@ function Header () {
   function eventsFiltered () {
     if (searchInput) {
       const filtered = allEvents.filter((el) => (
-        el.title.includes(searchInput.toUpperCase()) ||
-        el.description.includes(searchInput.toUpperCase()) ||
+        el.title.includes(searchInput) ||
+        el.description.includes(searchInput) ||
         el.date.includes(searchInput)))
       setFilterEvents(filtered)
       return filtered
@@ -26,7 +26,7 @@ function Header () {
   }
 
   function handleChange ({ target }) {
-    const userInput = target.value.toUpperCase()
+    const userInput = target.value
     setSearchInput(userInput)
     eventsFiltered()
   }

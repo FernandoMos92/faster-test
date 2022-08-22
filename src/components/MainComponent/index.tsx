@@ -12,9 +12,8 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 function MainComponent () {
-  const { allEvents, isOpenModal, isDetailOpen, setIsDetailOpen } =
+  const { isOpenModal, isDetailOpen, setIsDetailOpen } =
     useContext(UserContext)
-  console.log('🚀 -> newEvent', allEvents)
   const [details, setDetails] = useState({
     title: '',
     description: '',
