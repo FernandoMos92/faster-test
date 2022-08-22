@@ -40,12 +40,12 @@ const ModalDelete = styled.div`
     margin-right: 20px;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1441px) {
      width: 330px;
   }
 
   @media screen and (min-width: 1920px) {
-    width: 480px;
+    width: 500px;
   }
 `
 

@@ -12,8 +12,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 function MainComponent () {
-  const { isOpenModal, isDetailOpen, setIsDetailOpen } =
-    useContext(UserContext)
+  const { isOpenModal, isDetailOpen, setIsDetailOpen } = useContext(UserContext)
   const [details, setDetails] = useState({
     title: '',
     description: '',
@@ -46,7 +45,7 @@ function MainComponent () {
   }
 
   const notify = () => {
-    toast.success('Criado um novo evento!', {
+    toast.success('Evento criado com sucesso!', {
       position: 'top-right',
       autoClose: 10000,
       hideProgressBar: false,

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const Table = styled.table`
+position: relative;
 tbody {
   td {
     border-bottom: 2px solid #E8E8E8;
@@ -46,6 +47,9 @@ tbody {
 }
 
   @media screen and (min-width: 1920px){
+     .schedule__firstHalf-hour, .schedule__secondHalf-hour {
+        width: 160%;
+     }
   
 }
 `

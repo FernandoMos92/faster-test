@@ -14,7 +14,7 @@ function serializeData () {
       result.push(resultDate)
     }
     return result
-  })
+  }) 
 
   return result
 }

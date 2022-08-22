@@ -209,7 +209,7 @@ const Details = styled.div`
     }
   }
    @media screen and (min-width: 1920px){
-    width: 500px;
+    width: 520px;
     
     .details__container-information{
       input {
