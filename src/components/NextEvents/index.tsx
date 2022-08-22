@@ -7,7 +7,6 @@ import { getMonth } from '../../utils/generateDate'
 
 function NextEvents (props) {
   const { allEvents, filterEvents } = useContext(UserContext)
-
   const formatOutputDate = (date) => {
     const arrayDate = date.split('/')
     const monthName = getMonth(parseInt(arrayDate[1]))

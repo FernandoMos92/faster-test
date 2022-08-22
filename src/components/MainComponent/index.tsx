@@ -75,7 +75,7 @@ function MainComponent () {
         <label htmlFor='nextEvent' className='nextEvent'>
           Next Event
         </label>
-        {isDetailOpen && <DetailsCard elements={details} />}
+        {isDetailOpen && <DetailsCard elements={details} setDetails={setDetails} />}
         <NextEvents onClick={handleDetails} />
       </section>
       <hr className='mainComponent__separatorLine' />

@@ -135,6 +135,31 @@ const Details = styled.div`
     margin: 0;
   }
 
+  .container__event-hour {
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    background-color: transparent;
+    height: 10%;
+    padding: 10px;
+    position: relative;
+
+    label {
+      position: absolute;
+      top: 24px;
+      font-size: 10px;
+    }
+
+    .data_event-label-hour {
+      left: 15px;
+    }
+
+    .data_event-label-minute {
+      left: 135px;
+    }
+
+  }
+
   @media screen and (min-width: 1441px){
     width: 350px;
   }
