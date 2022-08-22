@@ -40,6 +40,7 @@ function DetailsCard (props: any) {
           {edit ? 'Editar evento' : 'Detalhes do evento'}
         </h2>
       </section>
+
       <section className='details__container-information'>
         <label htmlFor=''>Titulo</label>
         {

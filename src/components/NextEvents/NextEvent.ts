@@ -22,6 +22,7 @@ const NextEvent = styled.div`
 
   .calendar__events-list {
     .calendar__events-listItem {
+      background-color: transparent;
       border: 1px solid #e9f4f5;
       border-radius: 6px;
       height: 108px;
@@ -30,7 +31,7 @@ const NextEvent = styled.div`
       padding: 12px 16px;
       transition: all 0.2s ease-in-out;
       width: 290px;
-      z-index: -99;
+      z-index: -92;
 
       &:first-child {
         margin-top: 40px;
@@ -53,7 +54,10 @@ const NextEvent = styled.div`
         flex-flow: column nowrap;
         height: 44px;
         justify-content: space-evenly;
-        width: 100%;
+        pointer-events: none;
+        width: fit-content;
+        user-select: none;
+        z-index: -99;
 
         h3 {
           background-color: transparent;
@@ -61,6 +65,7 @@ const NextEvent = styled.div`
           font-weight: 700;
           font-size: 16px;
           line-height: 140%;
+          width: fit-content;
         }
 
         p {
@@ -69,6 +74,7 @@ const NextEvent = styled.div`
           font-weight: 400;
           font-size: 16px;
           line-height: 130%;
+          width: fit-content;
         }
       }
 
@@ -81,6 +87,10 @@ const NextEvent = styled.div`
         font-weight: 500;
         line-height: 140%;
         margin-top: 20px;
+        user-select: none;
+        pointer-events: none;
+        width: fit-content;
+        z-index: -99;
 
         p {
           background-color: transparent;

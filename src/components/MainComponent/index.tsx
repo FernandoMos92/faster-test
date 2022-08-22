@@ -23,6 +23,7 @@ function MainComponent () {
 
   function handleDetails ({ target }) {
     const elementsLocal = readLocalStorage()
+    console.dir(target)
     elementsLocal.forEach((el) => {
       if (el.id === parseInt(target.id)) {
         const { date, description, hour, id, location, minute, title } = el
@@ -40,6 +41,8 @@ function MainComponent () {
     })
   }
 
+  console.log('🚀 -> details', details)
+
   return (
     <Main>
       <section className='mainComponent__left'>
@@ -48,10 +51,10 @@ function MainComponent () {
         <label htmlFor='nextEvent' className='nextEvent'>
           Next Event
         </label>
-        {
+        {/* {
           isDetailOpen && <DetailsCard elements={ details } />
-        }
-        <NextEvents id='nextEvent' onClick={ handleDetails }/>
+        } */}
+        <NextEvents onClick={ handleDetails }/>
       </section>
       <hr className='mainComponent__separatorLine' />
       <section className='mainComponent__right'>

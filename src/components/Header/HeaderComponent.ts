@@ -112,20 +112,24 @@ const HeaderComponent = styled.header`
       margin-left: 50px;
 
       .header__container-search  {
-        width: 92%;
+        width: 81%;
         .header__button-newEvent {
-          font-size: 18px;
-          width: 180px;
+          font-size: 16px;
+          width: 160px;
         }
 
         .header__search-icon {
-          left: 13.5rem;
+          left: 12.5rem;
         }
         .header__search-input{
           width: 540px;
         }
       }
     }
+   }
+
+  @media screen and (min-width: 1440px){
+ 
    }
 
    @media screen and (min-width: 1920px){

@@ -27,11 +27,11 @@ function NextEvents (props) {
           ? (
             <ul className='calendar__events-list'>
               {
-                filterEvents.map((el) => (
+                filterEvents.map((el, index) => (
                   <li
                     {...props}
                     id={el.id}
-                    key={el.id}
+                    key={index}
                     className='calendar__events-listItem'
                   >
                     <section className='eventCard__title'>
