@@ -10,7 +10,7 @@ function NextEvents (props) {
 
   const formatOutputDate = (date) => {
     const arrayDate = date.split('/')
-    const monthName = getMonth(+arrayDate[1])
+    const monthName = getMonth(parseInt(arrayDate[1]))
     const output = `${monthName} ${arrayDate[0]}, ${arrayDate[2]}`
 
     return output

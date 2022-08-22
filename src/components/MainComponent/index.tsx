@@ -8,9 +8,13 @@ import { UserContext } from '../../Context/UserContext'
 import CardNewEvent from '../CardNewEvent'
 import readLocalStorage from '../../utils/readLocalStorage'
 import DetailsCard from '../DetailsCard'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function MainComponent () {
-  const { isOpenModal, isDetailOpen, setIsDetailOpen } = useContext(UserContext)
+  const { allEvents, isOpenModal, isDetailOpen, setIsDetailOpen } =
+    useContext(UserContext)
+  console.log('🚀 -> newEvent', allEvents)
   const [details, setDetails] = useState({
     title: '',
     description: '',
@@ -23,38 +27,57 @@ function MainComponent () {
 
   function handleDetails ({ target }) {
     const elementsLocal = readLocalStorage()
-    console.dir(target)
-    elementsLocal.forEach((el) => {
+    elementsLocal.forEach(el => {
       if (el.id === parseInt(target.id)) {
         const { date, description, hour, id, location, minute, title } = el
-        setDetails({
-          title,
-          description,
-          hour,
-          id,
-          location,
-          minute,
-          date
-        })
+        if (title.length !== 0 && date.length !== 0) {
+          setDetails({
+            title,
+            description,
+            hour,
+            id,
+            location,
+            minute,
+            date
+          })
+          if (!isDetailOpen) setIsDetailOpen(true)
+        }
       }
-      if (!isDetailOpen) setIsDetailOpen(true)
     })
   }
 
-  console.log('🚀 -> details', details)
+  const notify = () => {
+    toast.success('Criado um novo evento!', {
+      position: 'top-right',
+      autoClose: 10000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined
+    })
+  }
 
   return (
     <Main>
+      <ToastContainer
+        position='top-right'
+        autoClose={10000}
+        hideProgressBar={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <section className='mainComponent__left'>
-        {isOpenModal && <CardNewEvent />}
+        {isOpenModal && <CardNewEvent notify={ notify } />}
         <MyCalendar />
         <label htmlFor='nextEvent' className='nextEvent'>
           Next Event
         </label>
-        {/* {
-          isDetailOpen && <DetailsCard elements={ details } />
-        } */}
-        <NextEvents onClick={ handleDetails }/>
+        {isDetailOpen && <DetailsCard elements={details} />}
+        <NextEvents onClick={handleDetails} />
       </section>
       <hr className='mainComponent__separatorLine' />
       <section className='mainComponent__right'>

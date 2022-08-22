@@ -11,7 +11,8 @@ import readLocalStorage from '../../utils/readLocalStorage'
 import { AiFillCloud } from 'react-icons/ai'
 import { BsFillSunFill, BsFillCloudRainFill } from 'react-icons/bs'
 
-function CardNewEvent () {
+function CardNewEvent (props:any) {
+  console.log('🚀 -> props', props)
   const {
     setIsOpenModal,
     newEvent,
@@ -41,6 +42,7 @@ function CardNewEvent () {
     newEvent.id = readLocalStorage().length + 1
     saveLocalStorage(newEvent)
     updateEvents()
+    props.notify()
     clearEventStage()
     setIsOpenModal(false)
   }
