@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { UserContext } from '../../Context/UserContext'
-import ModalDelete from '../../styles/ModalDelete'
+import ModalDelete from './ModalDelete'
 import updateLocal from '../../utils/updateLoca'
 
 function DeleteEventModal (props:any) {

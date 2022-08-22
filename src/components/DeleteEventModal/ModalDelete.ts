@@ -8,11 +8,12 @@ const ModalDelete = styled.div`
   left: 10px;
   top: 30%;
   height: 120px;
-  width: 400px;
+  width: 280px;
   padding: 20px;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 600;
+  z-index: 99;
 
   .deleteEvent__button-yes, .deleteEvent__button-no {
     width: 100px;
@@ -37,6 +38,14 @@ const ModalDelete = styled.div`
 
   .deleteEvent__button-yes {
     margin-right: 20px;
+  }
+
+  @media screen and (min-width: 1440px) {
+     width: 330px;
+  }
+
+  @media screen and (min-width: 1920px) {
+    width: 480px;
   }
 `
 
