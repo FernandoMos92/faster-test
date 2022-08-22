@@ -83,7 +83,11 @@ function CardNewEvent (props:any) {
 
         <section id='hour-event' className='section__hour-event'>
           <div className='data__container-hour'>
-            <label htmlFor='data__event-hour'>Hora</label>
+            <label htmlFor='data__event-hour'>
+              {
+                parseInt(newEvent.hour) > 1 ? 'Horas' : 'Hora'
+              }
+            </label>
             <select
               className='data__event-hour'
               name='hour'
@@ -98,7 +102,11 @@ function CardNewEvent (props:any) {
 
           </div>
           <div className='data__container-minute'>
-            <label htmlFor='data__event-minute'>Minutos</label>
+            <label htmlFor='data__event-minute'>
+              {
+                parseInt(newEvent.minute) > 1 ? 'Minutos' : 'Minuto'
+              }
+            </label>
             <select
               className='data__event-minute'
               name='minute'
@@ -114,7 +122,7 @@ function CardNewEvent (props:any) {
         </section>
 
         <section className='newEvent__container-inputs'>
-          <label htmlFor="">Titulo do evento</label>
+          <label htmlFor="">Título do evento</label>
           <input
             id='newEvent__title'
             name='title'

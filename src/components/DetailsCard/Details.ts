@@ -9,6 +9,7 @@ const Details = styled.div`
   position: absolute;
   text-align: center;
   top: 165px;
+  position: absolute;
   width: 300px;
   z-index: 99;
 
@@ -27,17 +28,11 @@ const Details = styled.div`
     }
   }
 
-
-
   .details__icon-edit {
-    background-color: #355072;
+    background-color: transparent;
     cursor: pointer;
-    top: 46px;
-    right: 60px;
     transition: all 0.2s ease-in-out;
-    position: absolute;
-    right: 10px;
-    top: 8px;
+    width: 100%;
     &:active {
       transform: scale(1.2);
     }
@@ -122,6 +117,7 @@ const Details = styled.div`
     font-weight: 500;
     height: 30px;
     padding: 10px;
+    width: 80%;
 
     &:focus {
       outline-color: #ff0000;
@@ -143,28 +139,106 @@ const Details = styled.div`
     height: 10%;
     padding: 10px;
     position: relative;
-
+    
     label {
       position: absolute;
-      top: 24px;
+      top: 8px;
       font-size: 10px;
     }
 
     .data_event-label-hour {
-      left: 15px;
+      left: 25px;
     }
 
     .data_event-label-minute {
-      left: 135px;
+      left: 157px;
     }
 
   }
 
+   .container__event-hour {
+      width: 90%;
+      height: 70px;
+      margin: 0 auto;
+
+      select {
+      background-color: #f2f2f283;
+      width: 80px;
+      border-radius: 6px;
+      font-size: 18px;
+      padding: 5px;
+    }
+    label {
+      top: 0;
+      margin-bottom: 10px;
+    }
+    .data_event-label-hour {
+      left: 12px;
+    }
+
+    .data_event-label-minute {
+      left: 108px;
+    }
+    }
+
   @media screen and (min-width: 1441px){
     width: 350px;
+    .container__event-hour {
+      width: 90%;
+      height: 70px;
+      margin: 0 auto;
+
+      select {
+      background-color: #f2f2f283;
+      width: 80px;
+      border-radius: 6px;
+      font-size: 18px;
+      padding: 5px;
+    }
+    label {
+      top: 0;
+      margin-bottom: 10px;
+    }
+    .data_event-label-hour {
+      left: 20px;
+    }
+
+    .data_event-label-minute {
+      left: 140px;
+    }
+    }
   }
    @media screen and (min-width: 1920px){
     width: 500px;
+    
+    .details__container-information{
+      input {
+        width: 80%;
+      }
+    
+    }
+    .container__event-hour {
+      width: 60%;
+      margin: 0 auto;
+
+    select {
+      background-color: #f2f2f283;
+      width: 80px;
+      border-radius: 6px;
+      font-size: 18px;
+      padding: 5px;
+    }
+    label {
+      top: 0;
+    }
+    .data_event-label-hour {
+      left: 22px;
+    }
+
+    .data_event-label-minute {
+      left: 152px;
+    }
+    }
   }
 `
 

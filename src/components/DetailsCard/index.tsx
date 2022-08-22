@@ -26,7 +26,7 @@ function DetailsCard (props: any) {
   const [edit, setEdit] = useState(false)
   const { hours, minutes } = generateSchudele()
 
-  const handleDelete = (evt) => {
+  const handleDelete = () => {
     setDeleteEvent(true)
   }
 
@@ -42,11 +42,12 @@ function DetailsCard (props: any) {
         hour,
         minute
       }
-      localStorage.setItem('events', JSON.stringify([eventEdit]))
-      setAllEvents([eventEdit])
+      const diferentElements = readLocalStorage().filter((el) => el.id !== id)
+      localStorage.setItem('events', JSON.stringify([...diferentElements, eventEdit]))
+      setAllEvents([...diferentElements, eventEdit])
     }
-    console.log(filterEvent)
-    // setEdit(false)
+    setEdit(false)
+    setIsDetailOpen(false)
   }
 
   return (
@@ -58,6 +59,8 @@ function DetailsCard (props: any) {
             className='details__icon-close'
           />
         </abbr>
+        <h2>{edit ? 'Editar evento' : 'Detalhes do evento'}</h2>
+      </section>
         {!edit && (
           <abbr title='Editar evento'>
             <AiFillEdit
@@ -66,11 +69,9 @@ function DetailsCard (props: any) {
             />
           </abbr>
         )}
-        <h2>{edit ? 'Editar evento' : 'Detalhes do evento'}</h2>
-      </section>
 
       <section className='details__container-information'>
-        <label htmlFor=''>Titulo</label>
+        <label htmlFor=''>Título</label>
         {edit
           ? (
           <abbr title='Input para troca de titulo habilitado'>
@@ -129,7 +130,9 @@ function DetailsCard (props: any) {
                 htmlFor="data__event-hour"
                 className='data_event-label-hour'
               >
-                Hora
+                {
+                  hour.split('')[0] > 1 ? 'Horas' : 'Hora'
+                }
               </label>
             <select
               className='data__event-hour'
@@ -147,11 +150,14 @@ function DetailsCard (props: any) {
                 </option>
               ))}
               </select>
+              :
               <label
                 htmlFor="data__event-minute"
                 className='data_event-label-minute'
               >
-                Minutos
+                {
+                  minute > 1 ? 'Minutos' : 'Minuto'
+               }
               </label>
               <select
                 className='data__event-minute'
